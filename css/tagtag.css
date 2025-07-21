@@ -1,0 +1,169 @@
+.skill-category img {
+    vertical-align: middle;
+}
+
+.skills-container {
+    background-color: #f0f0f0;
+    padding: 40px;
+    border-radius: 16px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skills-container h2 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 32px;
+}
+
+.skills-box {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.skill-category {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 7px;
+}
+
+.category-title {
+    font-weight: bold;
+    min-width: 80px;
+}
+
+.skill {
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+}
+
+/* 기술별 색상 지정 */
+.java {
+    background-color: #996b15;
+    color: white;
+}
+
+.tkinter {
+    background-color: #F0F0F0;
+    color: black;
+    font-weight: 600;
+}
+
+.pyinstaller {
+    background-color: #4CAF50;
+    color: black;
+    font-weight: 600;
+}
+
+.c {
+    background-color: #422666;
+    color: white;
+}
+
+.python {
+    background-color: #3776ab;
+}
+
+.spring {
+    background-color: #49a84d;
+    color: white;
+}
+
+.springboot {
+    background-color: #215624;
+    color: white;
+}
+
+.mysql {
+    background-color: #4479A1;
+    color: white;
+}
+
+.aws {
+    background-color: #ff9900;
+}
+
+.git {
+    background-color: #F05032;
+    color: white;
+}
+
+.docker {
+    background-color: #2496ed;
+}
+
+.aduino{
+    background-color: #00979C;
+    /* color: black;
+    font-weight: 600; */
+}
+
+.breadboard{
+    background-color: #b0b0b0;
+    color: black;
+    font-weight: 600;
+}
+
+.solenoid{
+    background-color: #c23f3f;
+    color: white;
+}
+
+.relay{
+    background-color: #2978b4;
+    color: white;
+}
+
+.lcd{
+    background-color: #e0c642;
+    color: black;
+    font-weight: 600;
+}
+
+.jira {
+    background-color: #0052CC;
+    color: white;
+}
+
+.slack {
+    background-color: #4A154B;
+    color: white;
+}
+
+.javascript {
+    background-color: rgb(245, 219, 24);
+    color: #000;
+    font-weight: bold;
+}
+
+.mybatis {
+    background-color: #35495e;
+    /* 진한 회색-파랑톤 */
+    color: #fff;
+}
+
+.bootstrap {
+    background-color: #9463dc;
+    color: white;
+}
+
+.jsp {
+    background-color: #f4a261;
+    color: black;
+    font-weight: bold;
+}
+
+.notion {
+    background-color: #000000;
+    columns: white;
+}
+
+.discord{
+    background-color: #5865F2;
+}

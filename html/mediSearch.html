@@ -1,0 +1,844 @@
+<!--
+
+=========================================================
+* Spaces - Bootstrap Directory Listing Template
+=========================================================
+
+* Product Page: https://themes.getbootstrap.com/product/spaces/
+* Copyright 2020 Themesberg EULA (https://themes.getbootstrap.com/licenses/)
+
+* Coded by https://themesberg.com
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- Primary Meta Tags -->
+    <title>MediSearch</title> <!-- 프로젝트명으로 교체 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="title" content="Spaces - Item details">
+    <meta name="author" content="Themesberg">
+    <meta name="description"
+        content="Premium Directory Listing Bootstrap 4 Template featuring 37 hand-crafted pages, a dashboard an Mapbox integration. Spaces also comes with a complete UI Kit featuring over 700 components by Themesberg.">
+    <meta name="keywords"
+        content="bootstrap, bootstrap 4 template, directory listing bootstrap, bootstrap 4 listing, bootstrap listing, bootstrap 4 directory listing template, vector map, leaflet js template, mapbox theme, mapbox template, dashboard, themesberg, user dashboard bootstrap, dashboard bootstrap, ui kit, bootstrap ui kit, premium bootstrap theme" />
+    <link rel="canonical" href="https://themesberg.s3.us-east-2.amazonaws.com/public/products/spaces/thumbnail.jpg">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://demo.themesberg.com/pixel-pro">
+    <meta property="og:title" content="Spaces - Item details">
+    <meta property="og:description"
+        content="Premium Directory Listing Bootstrap 4 Template featuring 37 hand-crafted pages, a dashboard an Mapbox integration. Spaces also comes with a complete UI Kit featuring over 700 components by Themesberg.">
+    <meta property="og:image"
+        content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/spaces/thumbnail.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://demo.themesberg.com/pixel-pro">
+    <meta property="twitter:title" content="Spaces - Item details">
+    <meta property="twitter:description"
+        content="Premium Directory Listing Bootstrap 4 Template featuring 37 hand-crafted pages, a dashboard an Mapbox integration. Spaces also comes with a complete UI Kit featuring over 700 components by Themesberg.">
+    <meta property="twitter:image"
+        content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/spaces/thumbnail.jpg">
+
+    <!-- Favicon --> <!-- 여기는 프로젝트 대표 로고로 교체 -->
+    <link rel="apple-touch-icon" sizes="120x120" href="../assets/img/favicon/person.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/person.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/person.png">
+    <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="../assets/img/favicon/person.png" color="#ffffff">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Fontawesome -->
+    <link type="text/css" href="../vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+    <!-- Leaflet JS -->
+    <link type="text/css" href="../vendor/leaflet/dist/leaflet.css" rel="stylesheet">
+
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="../vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.css">
+
+    <!-- VectorMap -->
+    <link rel="stylesheet" href="../vendor/jqvmap/dist/jqvmap.min.css">
+
+    <!-- Main CSS -->
+    <link type="text/css" href="../css/spaces.css" rel="stylesheet">
+
+    <!-- Font Awesome 5 CDN 예시 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+
+    <!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
+
+    <!-- CSS 파일 추가 -->
+    <link type="text/css" href="../css/tagtag.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="../css/carousel.css"> -->
+
+    <style>
+        .breadcrumb-item+.breadcrumb-item::before {
+            content: ">";
+            color: #6c757d;
+            padding: 0 0.5rem;
+        }
+
+        /* 기본 틀 */
+        .custom-carousel {
+            width: 80%;
+            max-width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+
+        /* 이미지 슬라이드 영역 */
+        .custom-carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease;
+            height: auto;
+        }
+
+        .custom-carousel-item {
+            min-width: 100%;
+            height: auto;
+        }
+
+        .custom-carousel-item img {
+            width: 100%;
+            height: auto;
+            /* 중요: height: 100% 말고 auto! */
+            object-fit: contain;
+            /* or cover: 필요에 따라 */
+        }
+
+        /* 좌우 버튼 */
+        .custom-carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .custom-carousel-control.prev {
+            left: 10px;
+        }
+
+        .custom-carousel-control.next {
+            right: 10px;
+        }
+
+        .custom-carousel-arrow {
+            background: none;
+            border: none;
+            font-size: 70px;
+            /* 화살표 크기 크게 */
+            font-weight: bold;
+            cursor: pointer;
+            margin: 0 20px;
+            /* 이미지와의 거리 */
+            padding: 10px 15px;
+            /* 클릭 영역 확장 */
+            color: #002d55;
+            transition: color 0.3s;
+        }
+
+        .custom-carousel-arrow:hover {
+            color: #0056b3;
+            /* hover 시 색상 변경 (원하면) */
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header-global">
+        <nav id="navbar-main"
+            class="navbar navbar-main navbar-theme-primary navbar-expand-lg headroom py-lg-3 px-lg-6 navbar-dark navbar-transparent navbar-theme-primary"
+            style="display: flex; align-items: center;">
+            <div class="container" style="margin-top: 20px;">
+                <div id="navbar_global">
+                    <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                        <img class="navbar-brand-dark common" src="../assets/img/profile.png" height="35"
+                            alt="Logo light">
+                        <span class="nav-link-inner-text mr-1" style="margin-left: 10px;">Go To Profile</span>
+                    </a>
+                </div>
+            </div>
+
+            <div style="width: 200px; margin-top: 20px;">
+                <a href="../index.html" style="color: rgb(182, 0, 0); text-decoration: none;">Profile</a> &gt; <span
+                    style="color: rgb(200, 200, 200);">MediSearch</span> <!-- 프로젝트명 입력 -->
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="section bg-primary overlay-primary text-white py-5"></div>
+
+        <!-- 설명 -->
+        <div class="section section-lg pt-5" style="margin-top: 30px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-8">
+                        <!-- 본문 내용 -->
+                        <div class="row mb-5">
+                            <div class="col-12">
+                                <!-- 프로젝트 개요 -->
+                                <div>
+                                    <div class="text-white rounded py-2 px-4" id="overview"
+                                        style="margin-bottom: 20px; background-color: #244781; display: inline-block;">
+                                        <h5 class="m-0">프로젝트 개요</h5>
+                                    </div>
+                                    <div>
+                                        <!-- 프로젝트명 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>프로젝트명</h5>
+                                            <p style="padding-left: 10px;">MediSearch</p>
+                                        </div>
+                                        <!-- 개발 기간 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>개발 기간</h5>
+                                            <p style="padding-left: 10px;">2022.11.28 - 2023.01.02</p>
+                                        </div>
+                                        <!-- 팀 규모 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>팀 규모</h5>
+                                            <p style="padding-left: 10px;">김영주, 김현우, 박은성, 송승현, 이다영, 정의탁 [6인]</p>
+                                        </div>
+                                        <!-- 요약(한 줄 요약) -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>프로젝트 요약</h5>
+                                            <p style="padding-left: 10px;">해당 프로그램은 사용자의 위기 대응 능력을 향상시키고자 제작되었습니다.</p>
+                                            <p style="padding-left: 10px;">
+                                                해당 프로그램은 사용자의 상황(응급/공휴일/병원/약국/의약품)에 맞는 의료 정보를 신속하게 찾을 수 있도록 다섯 가지 검색 기능을
+                                                통합해 제공합니다.
+                                                사용자는 지역, 기관 유형, 진료과목, 시설 가용 여부 등 다양한 조건을 기준으로 필터링한 정보를 직관적인 UI를 통해 얻을 수
+                                                있습니다.
+                                                또한 회원 가입 후, 게시판 기능을 이용하면 다른 회원들과 다양한 정보를 공유할 수 있습니다.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 전체 서비스 -->
+                                <div>
+                                    <div class="text-white rounded py-2 px-4" id="flow"
+                                        style="margin-top: 20px; margin-bottom: 20px; background-color: #244781; display: inline-block;">
+                                        <h5 class="m-0">전체 서비스 흐름</h5>
+                                    </div>
+                                    <div>
+                                        <!-- 메인 페이지 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>메인 페이지</h5>
+                                            <p style="padding-left: 10px;">
+                                                메인 페이지에서 모든 페이지로 이동할 수 있게 설계되었습니다.
+                                                또한 페이지의 상단에 응급실 검색바를 추가함으로써 사용자는 사이트에 접속하는 즉시 수용 가능한 가장 가까운 응급실을 검색할 수
+                                                있고,
+                                                지도를 배치함으로써 사용자의 위치와 가까운 병원을 한 눈에 볼 수 있습니다.</p>
+                                        </div>
+                                        <!-- 응급실 검색 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>응급실 검색</h5>
+                                            <p style="padding-left: 10px;">
+                                                환자에게 필요한 치료 환경과 현재 위치를 고려해서 가장 가까운 응급실을 검색할 수 있습니다.
+                                                사용자는 지역(시/도, 구/군), 가용병상/중증질환 수용 가능 정도(응급실, 수술실, 내과 중환자실, 외과 중환자실, 신경외과
+                                                중환자실), 시설 가용 여부(CT, MRI, 조영 촬영기, 인공호흡기, 구급차) 를 검색에 선택적으로 활용할 수 있습니다.
+                                                구급차에서 구급 대원이 일일이 전화하며 확인할 필요 없이, 환자와 보호자가 옮길 응급실을 직접 확인해 선택할 수 있습니다.
+                                            </p>
+                                        </div>
+                                        <!-- 공휴일 진료기관 검색 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>공휴일 진료기관 검색</h5>
+                                            <p style="padding-left: 10px;">
+                                                환자는 공휴일에 진료하는 병원과 운영 중인 약국에 대한 정보를 검색할 수 있습니다.
+                                                사용자는 구분(병원, 약국), 지역(시/도, 구/군), 기관별(상급종합병원, 종합병원, 병원, 군병원, 군의원, 요양병원,
+                                                한방병원, 노인전문병원, 한의원, 군한의원), 진료과목별(내과, 소아청년과, 신경과, 정신건강의학과, 피부과, 외과) 를 검색에
+                                                선택적으로 활용할 수 있습니다.</p>
+                                        </div>
+                                        <!-- 일반 병원 검색 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>일반 병원 검색</h5>
+                                            <p style="padding-left: 10px;">
+                                                일반 병원 정보를 검색하고, 이름/별점/주소 순서로 정렬하여 결과를 확인할 수 있습니다.
+                                                사용자는 지역(시/도, 구/군), 기관별(상급종합병원, 종합병원, 병원, 군병원, 군의원, 요양병원, 한방병원, 노인전문병원,
+                                                한의원, 군한의원), 진료과목별(내과, 소아청년과, 신경과, 정신건강의학과, 피부과, 외과) 를 검색에 선택적으로 활용할 수
+                                                있습니다.</p>
+                                        </div>
+                                        <!-- 약국 검색 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>약국 검색</h5>
+                                            <p style="padding-left: 10px;">
+                                                일반 약국 정보를 검색하고, 이름/별점/주소 순서로 정렬하여 결과를 확인할 수 있습니다.
+                                                사용자는 지역(시/도, 구/군)을 검색에 선택적으로 활용할 수 있습니다.</p>
+                                        </div>
+                                        <!-- 의약품 검색 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>의약품 검색</h5>
+                                            <p style="padding-left: 10px;">
+                                                제품명(약의 이름)을 검색하면, 오른쪽 공간에서 제조사명/효능/복용방법/경고사항/주의사항/상호작용/부작용/저장방법을 확인할 수
+                                                있습니다.</p>
+                                        </div>
+                                        <!-- 게시판 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>게시판</h5>
+                                            <p style="padding-left: 10px;">
+                                                자유게시판/리뷰 게시판/Q&A게시판/고객센터 총 4개의 게시판으로 세분화되어, 사용자는 원하는 게시글을 분류해 확인할 수
+                                                있습니다.</p>
+                                        </div>
+                                        <!-- 회원가입/로그임 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>회원제</h5>
+                                            <p style="padding-left: 10px;">
+                                                사용자는 해당 탭에서 회원정보 저장 및 수정, 비밀번호 재설정, 즐겨찾기 목록 확인(병원, 약국, 의약품 각각 나누어 확인
+                                                가능), 내가 작성한 리뷰 보기, 로그아웃 기능을 이용할 수 있습니다.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 핵심 기능 -->
+                                <div>
+                                    <div class="text-white rounded py-2 px-4" id="main"
+                                        style="margin-top: 20px; margin-bottom: 20px; background-color: #244781; display: inline-block;">
+                                        <h5 class="m-0">핵심 기능</h5>
+                                    </div>
+                                    <div>
+                                        <!-- 기능1 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>Kakao Map API 이용한 추천(거리순 정렬) 시스템</h5>
+                                            <p style="padding-left: 10px;">
+                                                사용자의 현재 위치를 기반으로 인근 병원 및 약국을 가까운 순서대로 추천하고, 이를 지도에 표시합니다.
+                                            <ul>
+                                                <li>Kakao Map API 활용</li>
+                                                <li>거리 계산 로직</li>
+                                            </ul>
+                                            </p>
+                                        </div>
+                                        <!-- 기능2 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>게시판 기능</h5>
+                                            <p style="padding-left: 10px;">자유게시판/리뷰 게시판/Q&A게시판/고객센터 총 4개의 게시판으로 세분화되어,
+                                                사용자는 원하는 게시글을 분류해 확인할 수 있습니다.
+                                            <ul>
+                                                <li>게시글 CRUD: MyBatis를 활용한 MySQL DB 연동</li>
+                                                <li>페이징 처리</li>
+                                                <li>검색 기능</li>
+                                            </ul>
+                                            </p>
+                                        </div>
+                                        <!-- 기능3 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>검색 기능</h5>
+                                            <p style="padding-left: 10px;">
+                                                사용자의 상황(응급/공휴일/병원/약국/의약품)에 맞는 의료 정보를 신속하게 찾을 수 있도록 다섯 가지 검색 기능을 통합해
+                                                제공합니다. 사용자는 지역, 기관 유형, 진료과목, 시설 가용 여부 등 다양한 조건을 기준으로 필터링한 정보를 직관적인 UI를
+                                                통해 얻을 수 있습니다.
+                                            <ul>
+                                                <li>검색 조건 필터링 및 결과 정렬 기능: 모듈화</li>
+                                                <li>MyBatis를 활용한 MySQL DB 연동</li>
+                                            </ul>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 역할 -->
+                                <div>
+                                    <div class="text-white rounded py-2 px-4" id="my"
+                                        style="margin-top: 20px; margin-bottom: 20px; background-color: #244781; display: inline-block;">
+                                        <h5 class="m-0">맡은 역할</h5>
+                                    </div>
+                                    <div>
+                                        <!-- 내 역할 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>데이터베이스</h5>
+                                            <ul>
+                                                <li>ERD 설계: 공휴일 비상 진료 기관 테이블</li>
+                                                <li>
+                                                    <link href="https://www.data.go.kr/data/15000480/openapi.do">공공데이터
+                                                    포털: 국립 중앙 의료원의 [전국 명절 비상 진료기관 정보 조회 서비스] API 파싱
+                                                </li>
+                                                <li>정적 DB 구축</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h5><span class="mx-2">|</span>프론트엔드</h5>
+                                            <ul>
+                                                <li>메인 페이지 상단부(네비게이션 & 검색바)</li>
+                                                <li>공휴일 진료 기관 검색 페이지</li>
+                                                <li>커뮤니티 페이지</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h5><span class="mx-2">|</span>백엔드</h5>
+                                            <ul>
+                                                <li>Kakao Map API를 이용한 거리순 정렬 및 지도 배치</li>
+                                                <li>응급실 검색 기능: 전체</li>
+                                                <li>게시판 기능: 자유게시판</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 개발 과정에서 발생한 문제 & 해결 방안: 대략 3개 정도..? -->
+                                <div>
+                                    <div class="text-white rounded py-2 px-4" id="problem"
+                                        style="margin-top: 20px; margin-bottom: 20px; background-color: #244781; display: inline-block;">
+                                        <h5 class="m-0">개발 과정에서 발생한 문제 및 해결 방안</h5>
+                                    </div>
+                                    <div>
+                                        <!-- 문제1 -> 해결방안1 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>검색 조건 처리 시, SQL Null 조건 처리 문제</h5>
+                                            <p style="padding-left: 10px;">
+                                                사용자가 병원 검색 시 여러 조건(지역, 진료과목, 병상 가용 여부 등)을 선택하지 않으면, 검색 결과가 아예 안 뜨는 현상이
+                                                발생했습니다.
+                                                이 문제는 MyBatis에서 where 태그 내부 조건이 모두 null일 경우, 전체 병원을 반환하는 기본 조건이 작동하지 않았기
+                                                때문에 발생한 것이었습니다.
+                                                이는 where 태그와 if문을 조합하여 조건이 없을 때는 기본 조건이 자동으로 적용되도록 수정함으로써 해결할 수 있었습니다.
+                                            </p>
+                                        </div>
+                                        <!-- 문제2 -> 해결방안2 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>검색 시, 조인 성능 저하</h5>
+                                            <p style="padding-left: 10px;">
+                                                검색 조건이 많을수록 DB가 과부하되어 응답 속도가 느려지는 현상이 발생했습니다.
+                                                이 문제는 여러 테이블을 조인할 때 인덱스가 제대로 설정되지 않아 where 조건절이 매번 전체 테이블을 훑는 과정에서, 쿼리
+                                                성능이 급감했기 때문에 발생했습니다.
+                                                이를 해결하기 위해, 가장 먼저 자주 사용하는 검색 컬럼(병원 이름, 지역명, 과목명 등)에 인덱스를 설정했습니다.
+                                                그리고 서브쿼리로 조건 필터링을 선행하고, 뷰를 이용해 가상 테이블을 구성한 뒤에, 생성한 뷰를 대상으로 단순한 조건 검색을
+                                                수행함으로써 속도를 개선할 수 있었습니다.
+                                                이 과정은 MyBatis log4jdbc 설정을 통해 실행 SQL을 콘솔에 출력하고, 출력된 SQL을 MySQL에서
+                                                EXPLAIN으로 분석하여 full scan, using index, using temporary 등을 확인하며 진행되었습니다.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 성과 및 느낀점 -->
+                                <div>
+                                    <div class="text-white rounded py-2 px-4" id="result"
+                                        style="margin-top: 20px; margin-bottom: 20px; background-color: #244781; display: inline-block;">
+                                        <h5 class="m-0">프로젝트 성과 및 느낀점</h5>
+                                    </div>
+                                    <div>
+                                        <!-- 프로젝트 결과-->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>결과</h5>
+                                            <p style="padding-left: 10px;">
+                                                계획한 기능(응급실/공휴일 진료기관/병원/약국/의약품 검색, 게시판 4개, Kakao 지도 기반 추천 시스템 등)을 모두
+                                                안정적으로 구현하였으며,
+                                                사용자 관점에서 직관적인 UI와 효율적인 정보 탐색이 가능하도록 구성되었습니다.
+                                                각 기능은 실제 사용 시나리오에 맞춰 테스트를 거쳐 완성되었고, 데이터 처리와 검색 기능 역시 성능 향상을 고려해
+                                                최적화되었습니다.
+                                            </p>
+                                        </div>
+                                        <!-- 배운점 및 성장한 역량 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>배운점 및 성장한 역량</h5>
+                                            <p style="padding-left: 10px;">
+                                                이번 프로젝트를 통해 Spring 프레임워크 기반의 풀스택 웹 개발 전체 흐름을 실습하며,
+                                                백엔드-프론트엔드 간의 구조적 연계, DB 설계 및 연동, 검색/추천 기능 구현 등 웹 애플리케이션 전반에 대한 실질적인 이해를
+                                                높일 수 있었습니다.
+                                                특히 MyBatis를 활용한 동적 SQL 처리, 다중 조건 검색 및 성능 최적화 과정에서 SQL 튜닝과 데이터 흐름 제어 능력이
+                                                향상되었습니다.
+                                                또한, 사용자 중심의 기능 설계와 실제 데이터 기반의 응용 로직 구현을 통해 서비스 설계 역량도 함께 성장했습니다.
+                                            </p>
+                                        </div>
+                                        <!-- 다음 개선 과제 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>다음 개선 과제</h5>
+                                            <p style="padding-left: 10px;">
+                                            <ul>
+                                                <li><strong>실시간 데이터 반영 - </strong>
+                                                    지금은 공공데이터포털에서 수집한 데이터를 수동으로 DB에 저장해 정적으로 관리하고 있으나,
+                                                    추후에는 API 연동을 자동화하여 실시간 병상 정보, 진료 가능 여부 등 최신 상태를 반영할 수 있는 구조로 개선하고자
+                                                    합니다.</li>
+                                                <li><strong>서비스 배포 및 운영 경험 확보 - </strong>
+                                                    현재까지는 로컬 환경에서의 구현 및 테스트에 집중했으나,
+                                                    향후에는 클라우드 환경을 활용하여 서비스 배포 및 운영까지 완성해보고 싶습니다.
+                                                </li>
+                                            </ul>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!-- 프로젝트 이미지 -->
+                                <div class="fancy-gallery mb-5" id="img">
+                                    <div class="text-white rounded py-2 px-4" id="my"
+                                        style="margin-top: 20px; margin-bottom: 20px; background-color: #244781; display: inline-block;">
+                                        <h5 class="m-0">프로젝트 이미지</h5>
+                                    </div>
+                                    
+                                    <!-- 슬라이드 -->
+                                    <div id="myCarousel"
+                                        class="custom-carousel-wrapper d-flex align-items-center justify-content-center rounded"
+                                        data-bs-ride="carousel"
+                                        style="background-color: rgb(235, 236, 239); padding: 30px;">
+
+                                        <!-- 왼쪽 버튼 -->
+                                        <button class="custom-carousel-arrow" onclick="prevImage()"
+                                            style="color: #002d55;">&lt;</button>
+
+                                        <!-- 이미지 영역 -->
+                                        <div id="myCarousel" class="custom-carousel slide" data-bs-ride="carousel">
+                                            <div class="custom-carousel-inner">
+                                                <!-- 사진1 -->
+                                                <div class="custom-carousel-item active">
+                                                    <a href="../assets/img/project/mediSearch/MediSearch_page_main.png"
+                                                        class="mb-4 col-6 col-sm-4" data-fancybox="images"
+                                                        data-caption="Conference Space">
+                                                        <img class="rounded"
+                                                            src="../assets/img/project/mediSearch/MediSearch_page_main.png" alt="" />
+                                                    </a>
+                                                </div>
+                                                <!-- 사진2 -->
+                                                <div class="custom-carousel-item">
+                                                    <a href="../assets/img/project/mediSearch/mediSearch_page_search_emergency.png"
+                                                        class="mb-4 col-6 col-sm-4" data-fancybox="images"
+                                                        data-caption="Conference Space">
+                                                        <img class="rounded"
+                                                            src="../assets/img/project/mediSearch/mediSearch_page_search_emergency.png"
+                                                            alt="" />
+                                                    </a>
+                                                </div>
+                                                <!-- 사진4 -->
+                                                <div class="custom-carousel-item">
+                                                    <a href="../assets/img/project/mediSearch/mediSearch_page_search_hospital.png"
+                                                        class="mb-4 col-6 col-sm-4" data-fancybox="images"
+                                                        data-caption="Conference Space">
+                                                        <img class="rounded"
+                                                            src="../assets/img/project/mediSearch/mediSearch_page_search_hospital.png"
+                                                            alt="" />
+                                                    </a>
+                                                </div>
+                                                <!-- 사진5 -->
+                                                <div class="custom-carousel-item">
+                                                    <a href="../assets/img/project/mediSearch/mediSearch_page_search_pharmacy.png"
+                                                        class="mb-4 col-6 col-sm-4" data-fancybox="images"
+                                                        data-caption="Conference Space">
+                                                        <img class="rounded"
+                                                            src="../assets/img/project/mediSearch/mediSearch_page_search_pharmacy.png"
+                                                            alt="" />
+                                                    </a>
+                                                </div>
+                                                <!-- 사진6 -->
+                                                <div class="custom-carousel-item">
+                                                    <a href="../assets/img/project/mediSearch/mediSearch_page_search_community.png"
+                                                        class="mb-4 col-6 col-sm-4" data-fancybox="images"
+                                                        data-caption="Conference Space">
+                                                        <img class="rounded"
+                                                            src="../assets/img/project/mediSearch/mediSearch_page_search_community.png"
+                                                            alt="" />
+                                                    </a>
+                                                </div>
+                                                <!-- 사진8 -->
+                                                <div class="custom-carousel-item">
+                                                    <a href="../assets/img/project/mediSearch/mediSearch_page_detail.png"
+                                                        class="mb-4 col-6 col-sm-4" data-fancybox="images"
+                                                        data-caption="Conference Space">
+                                                        <img class="rounded"
+                                                            src="../assets/img/project/mediSearch/mediSearch_page_detail.png" alt="" />
+                                                    </a>
+                                                </div>
+                                                <!-- 사진9 -->
+                                                <div class="custom-carousel-item">
+                                                    <a href="../assets/img/project/mediSearch/mediSearch_page_detail_emergency.png"
+                                                        class="mb-4 col-6 col-sm-4" data-fancybox="images"
+                                                        data-caption="Conference Space">
+                                                        <img class="rounded"
+                                                            src="../assets/img/project/mediSearch/mediSearch_page_detail_emergency.png"
+                                                            alt="" />
+                                                    </a>
+                                                </div>
+                                                <!-- 사진10 -->
+                                                <div class="custom-carousel-item">
+                                                    <a href="../assets/img/project/mediSearch/mediSearch_page_info_1.png"
+                                                        class="mb-4 col-6 col-sm-4" data-fancybox="images"
+                                                        data-caption="Conference Space">
+                                                        <img class="rounded"
+                                                            src="../assets/img/project/mediSearch/mediSearch_page_info_1.png" alt="" />
+                                                        <img class="rounded"
+                                                            src="../assets/img/project/mediSearch/mediSearch_page_info_2.png" alt="" />
+                                                        <img class="rounded"
+                                                            src="../assets/img/project/mediSearch/mediSearch_page_info_3.png" alt="" />
+                                                        <img class="rounded"
+                                                            src="../assets/img/project/mediSearch/mediSearch_page_info_4.png" alt="" />
+                                                    </a>
+                                                </div>
+                                                <!-- 사진14 -->
+                                                <div class="custom-carousel-item">
+                                                    <a href="../assets/img/project/mediSearch/mediSearch_med.png"
+                                                        class="mb-4 col-6 col-sm-4" data-fancybox="images"
+                                                        data-caption="Conference Space">
+                                                        <img class="rounded" src="../assets/img/project/mediSearch/mediSearch_med.png"
+                                                            alt="" />
+                                                    </a>
+                                                </div>
+                                                <!-- 사진15 -->
+                                                <div class="custom-carousel-item">
+                                                    <a href="../assets/img/project/mediSearch/mediSearch_page_signup.png"
+                                                        class="mb-4 col-6 col-sm-4" data-fancybox="images"
+                                                        data-caption="Conference Space">
+                                                        <img class="rounded"
+                                                            src="../assets/img/project/mediSearch/mediSearch_page_signup.png" alt="" />
+                                                    </a>
+                                                    <a href="../assets/img/project/mediSearch/mediSearch_page_help.png"
+                                                        class="mb-4 col-6 col-sm-4" data-fancybox="images"
+                                                        data-caption="Conference Space">
+                                                        <img class="rounded"
+                                                            src="../assets/img/project/mediSearch/mediSearch_page_help.png" alt="" />
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- 오른쪽 버튼 -->
+                                        <button class="custom-carousel-arrow" onclick="nextImage()"
+                                            style="color: #002d55;">&gt;</button>
+                                    </div>
+                                    <!-- 슬라이드 끝 -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- 우측 박스 -->
+                    <aside class="col-12 col-lg-4 d-block z-10">
+                        <div id="profile-sidebar">
+
+                            <!-- 깃 허브 주소 바꾸기 -->
+                            <div class="card bg-soft border-light p-3" id="goGitHub"
+                                onclick="location.href='https://github.com/theGreatWest/MediSearch'"
+                                style="cursor: pointer;">
+                                <div class="align-items-baseline" style="overflow-x: hidden;">
+                                    <div class="mb-2" style="color: #0c2d5c;">
+                                        <h5 class="bg-primary text-white rounded py-2 px-4">
+                                            <i class="fab fa-github fa-lg" style="margin-right: 5px;"></i>
+                                            <span class="m-0">GitHub</span>
+                                        </h5>
+
+                                        <!-- 부모 박스: 크기 제한 + 스크롤 -->
+                                        <span class="d-flex" style="color: #0c2d5c; margin-top: 5px;">
+                                            https://github.com/theGreatWest/MediSearch
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 적용 기술 -->
+                            <div class="card border-light mt-4 p-3">
+                                <div class="bg-primary text-white rounded py-2 px-4">
+                                    <h5 class="m-0">Technology Stacks</h5>
+                                </div>
+                                <div class="media d-flex align-items-center my-3" style="color: #0c2d5c;">
+                                    <div class="skills-box">
+                                        <div class="skill-category">
+                                            <div class="skill-header">
+                                                <img src="../assets/img/code.png" width="22" height="22">
+                                                <span class="category-title"><strong>개발 언어</strong></span>
+                                            </div>
+
+                                            <div class="skill-tags">
+                                                <span class="skill tag java">Java</span>
+                                                <span class="skill tag javascript">JavaScript</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="skill-category">
+                                            <div class="skill-header">
+                                                <img src="../assets/img/web.png" width="22" height="22">
+                                                <span class="category-title"><strong>프론트엔드</strong></span>
+                                            </div>
+                                            <div class="skill-tags">
+                                                <span class="skill tag bootstrap">Bootstrap</span>
+                                                <span class="skill tag jsp">JSP</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="skill-category">
+                                            <div class="skill-header">
+                                                <img src="../assets/img/factory.png" width="22" height="22">
+                                                <span class="category-title"><strong>백엔드</strong></span>
+                                            </div>
+                                            <div class="skill-tags">
+                                                <span class="skill tag spring">Spring</span>
+                                                <span class="skill tag mybatis">MyBatis</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="skill-category">
+                                            <div class="skill-header">
+                                                <img src="../assets/img/backend.png" width="22" height="22">
+                                                <span class="category-title"><strong>데이터베이스</strong></span>
+                                            </div>
+                                            <div class="skill-tags">
+                                                <span class="skill tag mysql">MySQL</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="skill-category" style="margin-bottom: -30px;">
+                                            <img src="../assets/img/collaborationTool.png" width="30" height="30">
+                                            <span class="category-title"><strong>협업 툴</strong></span>
+
+                                            <div class="skill-tags">
+                                                <span class="skill tag git">Git</span>
+                                                <span class="skill tag jira">Jira</span>
+                                                <span class="skill tag slack">Discord</span>
+                                                <span class="skill tag notion">Notion</span>
+                                            </div>
+                                        </div>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 바로가기 탭 -->
+                            <div class="card border-light mt-4 p-3" style="margin-bottom: 20px;">
+                                <div class="bg-primary text-white rounded py-2 px-4" style="margin-bottom: 12px;">
+                                    <h5 class="m-0">Quick Access</h5>
+                                </div>
+                                <a href="#overview" class="btn animate-up-2">프로젝트 개요</a>
+                                <a href="#flow" class="btn animate-up-2">전체 서비스</a>
+                                <a href="#main" class="btn animate-up-2">핵심 기능</a>
+                                <a href="#my" class="btn animate-up-2">맡은 역할</a>
+                                <a href="#problem" class="btn animate-up-2">발생한 문제 & 해결 방안</a>
+                                <a href="#result" class="btn animate-up-2">성과 및 느낀점</a>
+                                <a href="#img" class="btn animate-up-2">프로젝트 이미지</a>
+                            </div>
+                        </div>
+                </div>
+                </aside>
+            </div>
+            <!-- End of section -->
+        </div>
+        </div>
+    </main>
+
+    <footer class="footer py-6 bg-primary text-white" style="margin-top: -100px;">
+        <div class="container">
+            <div class="row">
+                <div class="col mb-md-0">
+                    <div class="d-flex text-center justify-content-center align-items-center" role="contentinfo">
+                        <p class="font-weight-normal font-small mb-0">Copyright © Kim Young Ju
+                            <span class="current-year">2025</span>. All rights reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Core -->
+    <script src="../vendor/jquery/dist/jquery.min.js"></script>
+    <script src="../vendor/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../vendor/headroom.js/dist/headroom.min.js"></script>
+    <script src="../vendor/onscreen/dist/on-screen.umd.min.js"></script>
+
+    <!-- NoUISlider -->
+    <script src="../vendor/nouislider/distribute/nouislider.min.js"></script>
+
+    <!-- Bootstrap Datepicker -->
+    <script src="../vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    <!-- jQuery Waypoints -->
+    <script src="../vendor/waypoints/lib/jquery.waypoints.min.js"></script>
+
+    <!-- Owl acrousel -->
+    <script src="../vendor/owl.carousel/dist/owl.carousel.min.js"></script>
+
+    <!-- Smooth scroll -->
+    <script src="../vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+
+    <!-- Fancybox -->
+    <script src="../vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
+
+    <!-- Sticky sidebar -->
+    <script src="../vendor/sticky-sidebar/dist/sticky-sidebar.min.js"></script>
+
+    <!-- Mapbox & Leaflet.js -->
+    <script src="../vendor/leaflet/dist/leaflet.js"></script>
+
+    <!-- Chartist -->
+    <script src="../vendor/chartist/dist/chartist.min.js"></script>
+    <script src="../vendor/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+
+    <!-- Vector Maps -->
+    <script src="../vendor/jqvmap/dist/jquery.vmap.min.js"></script>
+    <script src="../vendor/jqvmap/dist/maps/jquery.vmap.usa.js"></script>
+
+    <!-- Sliderform -->
+    <script src="../assets/js/jquery.slideform.js"></script>
+
+    <!-- Spaces custom Javascript -->
+    <script src="../assets/js/spaces.js"></script>
+
+    <!-- 깃 허브 주소 바꾸기 -->
+    <script>
+        document.querySelector('.goGitHub').onclick = function () {
+            location.href = 'https://github.com/theGreatWest/MediSearch';
+        };
+    </script>
+
+    <!-- 슬라이드 -->
+    <script>
+        let currentSlide = 0;
+        const items = document.querySelectorAll('.custom-carousel-item');
+
+        function showSlide(index) {
+            const totalSlides = items.length;
+            if(index < 0) index = totalSlides - 1;
+            if(index >= totalSlides) index = 0;
+            document.querySelector('.custom-carousel-inner').style.transform = `translateX(-${index * 100}%)`;
+            currentSlide = index;
+        }
+
+        function nextImage() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevImage() {
+            showSlide(currentSlide - 1);
+        }
+
+        function showSlide(index) {
+            const totalSlides = items.length;
+            if(index < 0) index = totalSlides - 1;
+            if(index >= totalSlides) index = 0;
+
+            // 슬라이드 이동
+            document.querySelector('.custom-carousel-inner').style.transform = `translateX(-${index * 100}%)`;
+            currentSlide = index;
+
+            // 높이 조정
+            setTimeout(adjustCarouselHeight, 300); // 애니메이션 시간에 맞춰서 약간 딜레이
+        }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var sidebar = new StickySidebar('#profile-sidebar', {
+                topSpacing: 80,    // 상단 고정 거리(px), 필요에 따라 조절
+                bottomSpacing: 20, // 하단 간격
+                containerSelector: '.row',  // 사이드바가 포함된 부모 컨테이너 선택자
+                innerWrapperSelector: '.sidebar-inner', // 내부 감싸는 div 클래스명
+                resizeSensor: true,
+                // 기타 옵션 필요하면 추가 가능
+            });
+        });
+    </script>
+</body>
+
+</html>

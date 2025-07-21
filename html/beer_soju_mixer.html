@@ -1,0 +1,689 @@
+<!--
+
+=========================================================
+* Spaces - Bootstrap Directory Listing Template
+=========================================================
+
+* Product Page: https://themes.getbootstrap.com/product/spaces/
+* Copyright 2020 Themesberg EULA (https://themes.getbootstrap.com/licenses/)
+
+* Coded by https://themesberg.com
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+-->
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- Primary Meta Tags -->
+    <title>쏘맥19</title> <!-- 프로젝트명으로 교체 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="title" content="Spaces - Item details">
+    <meta name="author" content="Themesberg">
+    <meta name="description"
+        content="Premium Directory Listing Bootstrap 4 Template featuring 37 hand-crafted pages, a dashboard an Mapbox integration. Spaces also comes with a complete UI Kit featuring over 700 components by Themesberg.">
+    <meta name="keywords"
+        content="bootstrap, bootstrap 4 template, directory listing bootstrap, bootstrap 4 listing, bootstrap listing, bootstrap 4 directory listing template, vector map, leaflet js template, mapbox theme, mapbox template, dashboard, themesberg, user dashboard bootstrap, dashboard bootstrap, ui kit, bootstrap ui kit, premium bootstrap theme" />
+    <link rel="canonical" href="https://themesberg.s3.us-east-2.amazonaws.com/public/products/spaces/thumbnail.jpg">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://demo.themesberg.com/pixel-pro">
+    <meta property="og:title" content="Spaces - Item details">
+    <meta property="og:description"
+        content="Premium Directory Listing Bootstrap 4 Template featuring 37 hand-crafted pages, a dashboard an Mapbox integration. Spaces also comes with a complete UI Kit featuring over 700 components by Themesberg.">
+    <meta property="og:image"
+        content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/spaces/thumbnail.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://demo.themesberg.com/pixel-pro">
+    <meta property="twitter:title" content="Spaces - Item details">
+    <meta property="twitter:description"
+        content="Premium Directory Listing Bootstrap 4 Template featuring 37 hand-crafted pages, a dashboard an Mapbox integration. Spaces also comes with a complete UI Kit featuring over 700 components by Themesberg.">
+    <meta property="twitter:image"
+        content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/spaces/thumbnail.jpg">
+
+    <!-- Favicon --> <!-- 여기는 프로젝트 대표 로고로 교체 -->
+    <link rel="apple-touch-icon" sizes="120x120" href="../assets/img/favicon/person.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/person.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/person.png">
+    <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="../assets/img/favicon/person.png" color="#ffffff">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Fontawesome -->
+    <link type="text/css" href="../vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+    <!-- Leaflet JS -->
+    <link type="text/css" href="../vendor/leaflet/dist/leaflet.css" rel="stylesheet">
+
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="../vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.css">
+
+    <!-- VectorMap -->
+    <link rel="stylesheet" href="../vendor/jqvmap/dist/jqvmap.min.css">
+
+    <!-- Main CSS -->
+    <link type="text/css" href="../css/spaces.css" rel="stylesheet">
+
+    <!-- Font Awesome 5 CDN 예시 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+
+    <!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
+
+    <!-- CSS 파일 추가 -->
+    <link type="text/css" href="../css/tagtag.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="../css/carousel.css"> -->
+
+    <!-- 코드 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+
+    <style>
+        .breadcrumb-item+.breadcrumb-item::before {
+            content: ">";
+            color: #6c757d;
+            padding: 0 0.5rem;
+        }
+
+        /* 기본 틀 */
+        .custom-carousel {
+            width: 80%;
+            max-width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+
+        /* 이미지 슬라이드 영역 */
+        .custom-carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease;
+            height: auto;
+        }
+
+        .custom-carousel-item {
+            min-width: 100%;
+            height: auto;
+        }
+
+        .custom-carousel-item img {
+            width: 100%;
+            height: auto;
+            /* 중요: height: 100% 말고 auto! */
+            object-fit: contain;
+            /* or cover: 필요에 따라 */
+        }
+
+        /* 좌우 버튼 */
+        .custom-carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .custom-carousel-control.prev {
+            left: 10px;
+        }
+
+        .custom-carousel-control.next {
+            right: 10px;
+        }
+
+        .custom-carousel-arrow {
+            background: none;
+            border: none;
+            font-size: 70px;
+            /* 화살표 크기 크게 */
+            font-weight: bold;
+            cursor: pointer;
+            margin: 0 20px;
+            /* 이미지와의 거리 */
+            padding: 10px 15px;
+            /* 클릭 영역 확장 */
+            color: #002d55;
+            transition: color 0.3s;
+        }
+
+        .custom-carousel-arrow:hover {
+            color: #0056b3;
+            /* hover 시 색상 변경 (원하면) */
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header-global">
+        <nav id="navbar-main"
+            class="navbar navbar-main navbar-theme-primary navbar-expand-lg headroom py-lg-3 px-lg-6 navbar-dark navbar-transparent navbar-theme-primary"
+            style="display: flex; align-items: center;">
+            <div class="container" style="margin-top: 20px;">
+                <div id="navbar_global">
+                    <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                        <img class="navbar-brand-dark common" src="../assets/img/profile.png" height="35"
+                            alt="Logo light">
+                        <span class="nav-link-inner-text mr-1" style="margin-left: 10px;">Go To Profile</span>
+                    </a>
+                </div>
+            </div>
+
+            <div style="width: 200px; margin-top: 20px;">
+                <a href="../index.html" style="color: rgb(182, 0, 0); text-decoration: none;">Profile</a> &gt; <span
+                    style="color: rgb(200, 200, 200);">쏘맥19</span> <!-- 프로젝트명 입력 -->
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="section bg-primary overlay-primary text-white py-5"></div>
+
+        <!-- 설명 -->
+        <div class="section section-lg pt-5" style="margin-top: 30px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-8">
+                        <!-- 본문 내용 -->
+                        <div class="row mb-5">
+                            <div class="col-12">
+                                <!-- 프로젝트 개요 -->
+                                <div>
+                                    <div class="text-white rounded py-2 px-4" id="overview"
+                                        style="margin-bottom: 20px; background-color: #244781; display: inline-block;">
+                                        <h5 class="m-0">프로젝트 개요</h5>
+                                    </div>
+                                    <div>
+                                        <!-- 프로젝트명 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>프로젝트명</h5>
+                                            <p style="padding-left: 10px;">쏘맥19</p>
+                                        </div>
+                                        <!-- 개발 기간 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>개발 기간</h5>
+                                            <p style="padding-left: 10px;">2020.09.15 - 2020.11.22</p>
+                                        </div>
+                                        <!-- 팀 규모 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>팀 규모</h5>
+                                            <p style="padding-left: 10px;">김영주, 이수민 [2인]</p>
+                                        </div>
+                                        <!-- 요약(한 줄 요약) -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>프로젝트 요약</h5>
+                                            <p style="padding-left: 10px;">의용전자 수업 기말 프로젝트로 ‘코로나19로 인한 언택트(Untact) 시대, 일상생활 속 즐거움을 찾을 수 있는 아이디어를 개발하라’는 주제가 주어졌습니다. 
+                                                이에 따라 저희 팀은 실내 소모임에서 활용할 수 있는 자동 소맥 제조기를 제작했습니다.</p>
+                                            <p style="padding-left: 10px;">
+                                                사용자가 리모컨을 이용해 노동주(1번)/귀가주(2번)/네발주(3번)/부드럽주(4번)/가르마주(5번)/애기주(6번)를 누르면, 
+                                                해당 기기는 원하는 비율의 소맥을 자동으로 제작해 줍니다.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 핵심 기능 -->
+                                <div>
+                                    <div class="text-white rounded py-2 px-4" id="main"
+                                        style="margin-top: 20px; margin-bottom: 20px; background-color: #244781; display: inline-block;">
+                                        <h5 class="m-0">핵심 기능</h5>
+                                    </div>
+                                    <div>
+                                        <!-- 기능1 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>리모컨 입력 인식</h5>
+                                            <p style="padding-left: 10px;">
+                                                리모컨 버튼을 통해 소맥 혼합 비율(노동주(1번)/귀가주(2번)/네발주(3번)/부드럽주(4번)/가르마주(5번)/애기주(6번))을 선택하고, 
+                                                선택된 입력값을 아두이노로 전달해 동작을 제어합니다. 
+                                            <ul>
+                                                <li>C + Arduino IDE 를 사용해 하드웨어와 소프트웨어 연동</li>
+                                                <li>적외선 리모컨 모듈 활용</li>
+                                            </ul>
+                                            </p>
+                                        </div>
+                                        <!-- 기능2 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>자동 음료 분배(혼합 비율 제어)</h5>
+                                            <p style="padding-left: 10px;">
+                                                솔레노이드 밸브와 릴레이 모듈을 제어하여 소주와 맥주를 선택된 비율로 자동으로 주입합니다.
+                                            <ul>
+                                                <li>구현에 필요한 각종 하드웨어(솔레노이드 밸브, 릴레이 모듈 등) 활용</li>
+                                            </ul>
+                                            </p>
+                                        </div>
+                                        <!-- 기능3 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>LCD를 통한 진행 상황 출력</h5>
+                                            <p style="padding-left: 10px;"> LCD 디스플레이를 통해 현재 상태(맥주 주입 중, 소주 주입 중, 완료 등)를 표시하여 사용자가 과정을 실시간으로 확인할 수 있습니다.
+                                            <ul>
+                                                <li>LCD Display 활용</li>
+                                            </ul>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 역할 -->
+                                <div>
+                                    <div class="text-white rounded py-2 px-4" id="my"
+                                        style="margin-top: 20px; margin-bottom: 20px; background-color: #244781; display: inline-block;">
+                                        <h5 class="m-0">맡은 역할</h5>
+                                    </div>
+                                    <div>
+                                        <!-- 내 역할 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>하드웨어</h5>
+                                            <ul>
+                                                <li>브래드보드와 Arduino Uno를 이용한 회로 전체 구성</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h5><span class="mx-2">|</span>시스템</h5>
+                                            <ul>
+                                                <li>리모컨 입력값을 기반으로 솔레노이드 밸브 제어 로직 구현</li>
+                                                <li>LCD 디스플레이를 통한 음료 혼합 진행 상황 시각화</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 개발 과정에서 발생한 문제 & 해결 방안: 대략 3개 정도..? -->
+                                <div>
+                                    <div class="text-white rounded py-2 px-4" id="problem"
+                                        style="margin-top: 20px; margin-bottom: 20px; background-color: #244781; display: inline-block;">
+                                        <h5 class="m-0">개발 과정에서 발생한 문제 및 해결 방안</h5>
+                                    </div>
+                                    <div>
+                                        <!-- 문제1 -> 해결방안1 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>음료 출력부 미작동 문제</h5>
+                                            <p style="padding-left: 10px;">
+                                                솔레노이드 밸브가 정상적으로 작동하지 않는 문제가 발생했습니다. 
+                                                이 문제는 전력의 +극과 릴레이 모듈의 COM 단자 연결이 반대로 되어 있어 
+                                                릴레이 모듈이 정상적으로 스위칭하지 못해 밸브에 전력이 제대로 공급되지 않았기 때문에 발생했습니다. 
+                                                이는 전력의 +극과 솔레노이드 밸드, 릴레이 모듈의 NC을 연결하고, 전력의 -극과 릴레이 모듈의 COM 단자를 연결하여 해결할 수 있었습니다.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 성과 및 느낀점 -->
+                                <div>
+                                    <div class="text-white rounded py-2 px-4" id="result"
+                                        style="margin-top: 20px; margin-bottom: 20px; background-color: #244781; display: inline-block;">
+                                        <h5 class="m-0">프로젝트 성과 및 느낀점</h5>
+                                    </div>
+                                    <div>
+                                        <!-- 프로젝트 결과-->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>결과</h5>
+                                            <p style="padding-left: 10px;">
+                                                소주와 맥주를 자동으로 혼합해주는 실내 소모임 전용 소맥 제조기를 성공적으로 구현했습니다. 
+                                                Arduino Uno와 브레드보드 기반 하드웨어 제어 및 적외선 리모컨 입력 인식 기능을 통합하여, 
+                                                사용자가 리모컨 버튼으로 간편하게 소맥 비율을 선택하고 자동으로 음료가 분배되는 시스템을 완성했습니다. 
+                                                또한, LCD 디스플레이를 통해 진행 상황을 실시간으로 확인할 수 있어 사용자 경험을 향상시켰습니다.
+                                            </p>
+                                        </div>
+                                        <!-- 배운점 및 성장한 역량 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>배운점 및 성장한 역량</h5>
+                                            <p style="padding-left: 10px;">
+                                                이번 프로젝트를 통해 임베디드 시스템 설계 및 프로그래밍(C와 Arduino IDE)을 실습하며, 
+                                                하드웨어와 소프트웨어의 유기적인 연동 경험을 쌓았습니다. 
+                                                특히, 적외선 리모컨 신호 처리와 릴레이 모듈을 이용한 솔레노이드 밸브 제어 로직 구현 과정에서 
+                                                실시간 제어 및 이벤트 처리에 대한 이해를 깊게 할 수 있었습니다. 
+                                            </p>
+                                        </div>
+                                        <!-- 다음 개선 과제 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>다음 개선 과제</h5>
+                                            <p style="padding-left: 10px;">
+                                            <ul>
+                                                <li><strong>정밀한 혼합 비율 제어 - </strong>
+                                                    현재는 단순 시간 기반 제어 방식을 사용하고 있으나, 
+                                                    유량 센서 등을 활용해 정확한 혼합 비율을 실시간으로 측정 및 조절하는 시스템으로 발전시키고자 합니다.</li>
+                                                <li><strong>낙차 방식 한계 극복 및 속도 개선 - </strong>
+                                                    현재는 음료가 낙차(중력)를 이용해 밸브를 통해 흘러 나오는 방식을 사용하고 있어, 음료 배출 속도가 느린 단점이 있습니다. 
+                                                    향후 펌프를 도입해 이 문제를 해결하고 보다 빠르고 안정적인 음료 분배 시스템을 구현하고 싶습니다.</li>
+                                            </ul>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 프로젝트 이미지 -->
+                                <div class="fancy-gallery mb-5" id="img">
+                                    <div class="text-white rounded py-2 px-4" id="result"
+                                        style="margin-top: 20px; margin-bottom: 20px; background-color: #244781; display: inline-block;">
+                                        <h5 class="m-0">프로젝트 이미지</h5>
+                                    </div>
+
+                                    <!-- 슬라이드 -->
+                                    <div id="myCarousel"
+                                        class="custom-carousel-wrapper d-flex align-items-center justify-content-center rounded"
+                                        data-bs-ride="carousel"
+                                        style="background-color: rgb(235, 236, 239); padding: 30px;">
+
+                                        <!-- 왼쪽 버튼 -->
+                                        <button class="custom-carousel-arrow" onclick="prevImage()"
+                                            style="color: #002d55;">&lt;</button>
+
+                                        <!-- 이미지 영역 -->
+                                        <div id="myCarousel" class="custom-carousel slide" data-bs-ride="carousel">
+                                            <div class="custom-carousel-inner">
+                                                <!-- 사진1 -->
+                                                <div class="custom-carousel-item active">
+                                                    <a href="../assets/img/project/beerSojuMixer/ss_2.jpeg"
+                                                        class="mb-4 col-6 col-sm-4" data-fancybox="images"
+                                                        data-caption="Conference Space">
+                                                        <img class="rounded"
+                                                            src="../assets/img/project/beerSojuMixer/ss_2.jpeg" alt="" />
+                                                    </a>
+                                                </div>
+                                                <!-- 사진2 -->
+                                                <div class="custom-carousel-item">
+                                                    <a href="../assets/img/project/beerSojuMixer/ss_3.jpeg"
+                                                        class="mb-4 col-6 col-sm-4" data-fancybox="images"
+                                                        data-caption="Conference Space">
+                                                        <img class="rounded"
+                                                            src="../assets/img/project/beerSojuMixer/ss_3.jpeg" alt="" />
+                                                    </a>
+                                                </div>
+                                                <!-- 사진4 -->
+                                                <div class="custom-carousel-item">
+                                                    <a href="../assets/img/project/beerSojuMixer/ss_1.jpeg"
+                                                        class="mb-4 col-6 col-sm-4" data-fancybox="images"
+                                                        data-caption="Conference Space">
+                                                        <img class="rounded"
+                                                            src="../assets/img/project/beerSojuMixer/ss_1.jpeg" alt="" />
+                                                    </a>
+                                                </div>
+                                                <!-- 사진5 -->
+                                                <div class="custom-carousel-item">
+                                                    <a href="../assets/img/project/beerSojuMixer/ss_4.jpeg"
+                                                        class="mb-4 col-6 col-sm-4" data-fancybox="images"
+                                                        data-caption="Conference Space">
+                                                        <img class="rounded"
+                                                            src="../assets/img/project/beerSojuMixer/ss_4.jpeg" alt="" />
+                                                    </a>
+                                                </div>
+                                                <!-- 사진2 -->
+                                                <div class="custom-carousel-item">
+                                                    <a href="../assets/img/project/beerSojuMixer/ss_8.jpeg"
+                                                        class="mb-4 col-6 col-sm-4" data-fancybox="images"
+                                                        data-caption="Conference Space">
+                                                        <img class="rounded"
+                                                            src="../assets/img/project/beerSojuMixer/ss_8.jpeg" alt="" />
+                                                    </a>
+                                                </div>
+                                                <!-- 사진5 -->
+                                                <div class="custom-carousel-item">
+                                                    <a href="../assets/img/project/beerSojuMixer/ss_5.jpeg"
+                                                        class="mb-4 col-6 col-sm-4" data-fancybox="images"
+                                                        data-caption="Conference Space">
+                                                        <img class="rounded"
+                                                            src="../assets/img/project/beerSojuMixer/ss_5.jpeg"
+                                                            alt="" />
+                                                    </a>
+                                                </div>
+                                                <!-- 사진6 -->
+                                                <div class="custom-carousel-item">
+                                                    <a href="../assets/img/project/beerSojuMixer/ss_6.jpeg"
+                                                        class="mb-4 col-6 col-sm-4" data-fancybox="images"
+                                                        data-caption="Conference Space">
+                                                        <img class="rounded"
+                                                            src="../assets/img/project/beerSojuMixer/ss_6.jpeg"
+                                                            alt="" />
+                                                    </a>
+                                                </div>
+                                                <!-- 사진7 -->
+                                                <div class="custom-carousel-item">
+                                                    <a href="../assets/img/project/beerSojuMixer/ss_7.jpeg"
+                                                        class="mb-4 col-6 col-sm-4" data-fancybox="images"
+                                                        data-caption="Conference Space">
+                                                        <img class="rounded"
+                                                            src="../assets/img/project/beerSojuMixer/ss_7.jpeg"
+                                                            alt="" />
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- 오른쪽 버튼 -->
+                                        <button class="custom-carousel-arrow" onclick="nextImage()"
+                                            style="color: #002d55;">&gt;</button>
+                                    </div>
+                                    <!-- 슬라이드 끝 -->
+                                </div>
+
+
+                                <!-- 프로젝트 실행 영상 -->
+                                <div id="video">
+                                    <div class="text-white rounded py-2 px-4" id="result"
+                                        style="margin-top: 20px; margin-bottom: 20px; background-color: #244781; display: inline-block;">
+                                        <h5 class="m-0">프로젝트 실행 영상</h5>
+                                    </div>
+                                    <div>
+                                        <iframe width="100%" height="500"
+                                            src="https://www.youtube.com/embed/Mi09oD3LS-E?si=jURxUu2vI-nsh3q3"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- 우측 박스 -->
+                    <aside class="col-12 col-lg-4 d-block z-10">
+                        <div id="profile-sidebar">
+
+                            <!-- 깃 허브 주소 바꾸기 -->
+                            <!-- LG그램에서 Arduino Sketch 파일 있는지 체크 -> 깃 업로드 -> 링크 올리기 -->
+                            <div class="card bg-soft border-light p-3" id="goGitHub"
+                                onclick="location.href='https://github.com/theGreatWest/beerSojuMaker'" 
+                                style="cursor: pointer;">
+                                <div class="align-items-baseline" style="overflow-x: hidden;">
+                                    <div class="mb-2" style="color: #0c2d5c;">
+                                        <h5 class="bg-primary text-white rounded py-2 px-4">
+                                            <i class="fab fa-github fa-lg" style="margin-right: 5px;"></i>
+                                            <span class="m-0">GitHub</span>
+                                        </h5>
+
+                                        <!-- 부모 박스: 크기 제한 + 스크롤 -->
+                                        <span class="d-flex" style="color: #0c2d5c; margin-top: 5px;">
+                                            https://github.com/theGreatWest/beerSojuMaker
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 적용 기술 -->
+                            <div class="card border-light mt-4 p-3">
+                                <div class="bg-primary text-white rounded py-2 px-4">
+                                    <h5 class="m-0">Technology Stacks</h5>
+                                </div>
+                                <div class="media d-flex align-items-center my-3" style="color: #0c2d5c;">
+                                    <div class="skills-box">
+                                        <div class="skill-category">
+                                            <div class="skill-header">
+                                                <img src="../assets/img/code.png" width="22" height="22">
+                                                <span class="category-title"><strong>개발 언어</strong></span>
+                                            </div>
+
+                                            <div class="skill-tags">
+                                                <span class="skill tag c">C</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="skill-category"  style="margin-bottom: -30px;">
+                                            <div class="skill-header">
+                                                <img src="../assets/img/web.png" width="22" height="22">
+                                                <span class="category-title"><strong>하드웨어/컨트롤러</strong></span>
+                                            </div>
+                                            <div class="skill-tags">
+                                                <span class="skill tag aduino">Arduino Uno</span>
+                                                <span class="skill tag breadboard">Breadboard</span>
+                                                <div style="margin-top: 15px;">
+                                                    <span class="skill tag solenoid">Solenoid Valve</span>
+                                                    <span class="skill tag relay">Relay Module</span>
+                                                </div>
+                                                <div style="margin-top: 15px;">
+                                                    <span class="skill tag lcd">LCD Display</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 바로가기 탭 -->
+                            <div class="card border-light mt-4 p-3" style="margin-bottom: 20px;">
+                                <div class="bg-primary text-white rounded py-2 px-4" style="margin-bottom: 12px;">
+                                    <h5 class="m-0">Quick Access</h5>
+                                </div>
+                                <a href="#overview" class="btn animate-up-2">프로젝트 개요</a>
+                                <a href="#main" class="btn animate-up-2">핵심 기능</a>
+                                <a href="#my" class="btn animate-up-2">맡은 역할</a>
+                                <a href="#problem" class="btn animate-up-2">발생한 문제 & 해결 방안</a>
+                                <a href="#result" class="btn animate-up-2">성과 및 느낀점</a>
+                                <a href="#img" class="btn animate-up-2">프로젝트 이미지</a>
+                                <a href="#video" class="btn animate-up-2">실행 영상</a>
+                            </div>
+                        </div>
+                </div>
+                </aside>
+            </div>
+            <!-- End of section -->
+        </div>
+        </div>
+    </main>
+
+    <footer class="footer py-6 bg-primary text-white" style="margin-top: -100px;">
+        <div class="container">
+            <div class="row">
+                <div class="col mb-md-0">
+                    <div class="d-flex text-center justify-content-center align-items-center" role="contentinfo">
+                        <p class="font-weight-normal font-small mb-0">Copyright © Kim Young Ju
+                            <span class="current-year">2025</span>. All rights reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Core -->
+    <script src="../vendor/jquery/dist/jquery.min.js"></script>
+    <script src="../vendor/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../vendor/headroom.js/dist/headroom.min.js"></script>
+    <script src="../vendor/onscreen/dist/on-screen.umd.min.js"></script>
+
+    <!-- NoUISlider -->
+    <script src="../vendor/nouislider/distribute/nouislider.min.js"></script>
+
+    <!-- Bootstrap Datepicker -->
+    <script src="../vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    <!-- jQuery Waypoints -->
+    <script src="../vendor/waypoints/lib/jquery.waypoints.min.js"></script>
+
+    <!-- Owl acrousel -->
+    <script src="../vendor/owl.carousel/dist/owl.carousel.min.js"></script>
+
+    <!-- Smooth scroll -->
+    <script src="../vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+
+    <!-- Fancybox -->
+    <script src="../vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
+
+    <!-- Sticky sidebar -->
+    <script src="../vendor/sticky-sidebar/dist/sticky-sidebar.min.js"></script>
+
+    <!-- Mapbox & Leaflet.js -->
+    <script src="../vendor/leaflet/dist/leaflet.js"></script>
+
+    <!-- Chartist -->
+    <script src="../vendor/chartist/dist/chartist.min.js"></script>
+    <script src="../vendor/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+
+    <!-- Vector Maps -->
+    <script src="../vendor/jqvmap/dist/jquery.vmap.min.js"></script>
+    <script src="../vendor/jqvmap/dist/maps/jquery.vmap.usa.js"></script>
+
+    <!-- Sliderform -->
+    <script src="../assets/js/jquery.slideform.js"></script>
+
+    <!-- Spaces custom Javascript -->
+    <script src="../assets/js/spaces.js"></script>
+
+    <!-- 깃 허브 주소 바꾸기 -->
+    <script>
+        document.querySelector('.goGitHub').onclick = function () {
+            location.href = 'https://github.com/theGreatWest/MediSearch';
+        };
+    </script>
+
+    <!-- 슬라이드 -->
+    <script>
+        let currentSlide = 0;
+        const items = document.querySelectorAll('.custom-carousel-item');
+
+        function showSlide(index) {
+            const totalSlides = items.length;
+            if(index < 0) index = totalSlides - 1;
+            if(index >= totalSlides) index = 0;
+            document.querySelector('.custom-carousel-inner').style.transform = `translateX(-${index * 100}%)`;
+            currentSlide = index;
+        }
+
+        function nextImage() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevImage() {
+            showSlide(currentSlide - 1);
+        }
+
+        function showSlide(index) {
+            const totalSlides = items.length;
+            if(index < 0) index = totalSlides - 1;
+            if(index >= totalSlides) index = 0;
+
+            // 슬라이드 이동
+            document.querySelector('.custom-carousel-inner').style.transform = `translateX(-${index * 100}%)`;
+            currentSlide = index;
+
+            // 높이 조정
+            setTimeout(adjustCarouselHeight, 300); // 애니메이션 시간에 맞춰서 약간 딜레이
+        }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var sidebar = new StickySidebar('#profile-sidebar', {
+                topSpacing: 80,    // 상단 고정 거리(px), 필요에 따라 조절
+                bottomSpacing: 20, // 하단 간격
+                containerSelector: '.row',  // 사이드바가 포함된 부모 컨테이너 선택자
+                innerWrapperSelector: '.sidebar-inner', // 내부 감싸는 div 클래스명
+                resizeSensor: true,
+                // 기타 옵션 필요하면 추가 가능
+            });
+        });
+    </script>
+</body>
+
+</html>
