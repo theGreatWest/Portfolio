@@ -85,6 +85,11 @@
     color: white;
 }
 
+.oracle {
+    background-color: #e32828;
+    color: white;
+}
+
 .aws {
     background-color: #ff9900;
 }
