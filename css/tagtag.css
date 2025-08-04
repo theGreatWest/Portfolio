@@ -92,6 +92,8 @@
 
 .aws {
     background-color: #ff9900;
+    color: #000;
+    font-weight: bold;
 }
 
 .git {
