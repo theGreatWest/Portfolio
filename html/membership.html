@@ -209,7 +209,8 @@
                                             <p style="padding-left: 10px;">해당 프로젝트는 <strong>Oracle DB 활용법 및 RESTful API 설계, 클라우드를 이용한 애플리케이션 배포</strong> 등 <strong>처음 접하는 기술을 빠르게 학습하고 프로젝트에 적용하는 경험</strong>을 하기 위해, 
                                                 현대오토에버에서 개발한 블루멤버십 서비스를 참고하여 제작한 멤버십 서비스 관련 프로젝트로, 배포 테스트를 완료했지만 아직 개발 단계에 있습니다.</p>
                                             <p style="padding-left: 10px;">
-                                                로그인, 마이페이지, AWS를 이용한 애플리케이션 배포 완료
+                                                로그인, 회원가입, 비밀번호 찾기, 마이페이지, 자동차/카드 관리 기능 구현 및 AWS를 이용한 애플리케이션 배포가 목적입니다.
+                                                현재까지 로그인, 마이페이지, AWS를 이용한 애플리케이션 배포까지 완료되었습니다.
                                             </p>
                                         </div>
                                     </div>
@@ -224,52 +225,72 @@
                                     <div>
                                         <!-- 메인 페이지 -->
                                         <div>
-                                            <h5><span class="mx-2">|</span>메인 페이지</h5>
+                                            <h5><span class="mx-2">|</span>로그인</h5>
                                             <p style="padding-left: 10px;">
-                                                메인 페이지에서 통계 자료 수치(나이대별 총 근로시간, 회사 규모별 총 근무시간, 산업 대분류별 출생아 부모의 육아 휴직
-                                                사용률)를 그래프로 바로 확인할 수 있으며, 모든 페이지로 쉽게 이동할 수 있게 설계되었습니다.
-                                                또한 페이지의 상단에 뉴스 검색바와 노동법 FAQ 검색바를 배치하여 사용자가 쉽고 빠르게 원하는 기사 및 질문을 검색할 수
-                                                있습니다.
-                                                더 나아가 로그인 시, 나의 요일별/월별/연간 근로 시간을 그래프 및 수치로 한 눈에 확인할 수 있습니다.
-                                        </div>
-                                        <!-- 나의 근무시간 -->
-                                        <div>
-                                            <h5><span class="mx-2">|</span>나의 근무 시간</h5>
-                                            <p style="padding-left: 10px;">
-                                                근무 시작/중지/퇴근(근무시간 저장) 세 개의 버튼을 누르고,
-                                                미리 발급된 QR코드(추후 회사 사원증으로 대체 가능)를 인식시켜 근무 시간을 측정/정지/저장 합니다.
-                                                사용자는 주간/연간/월별 근무 시간 통계 수치를 그래프 및 평균 수치로 간편하게 확인할 수 있습니다.
+                                                이메일과 비밀번호를 이용해 로그인합니다.
+                                                <br>눈 모양의 아이콘을 클릭해 작성한 비밀번호를 확인할 수 있으며, 
+                                                로그인 버튼 클릭시 마이페이지로 이동합니다. 
+                                                또한, 중앙 우측에 Forgot password?를 통해 비밀번호 재발급 신청이 가능하며, 
+                                                Create Account을 누르면 뜨는 화면 정중앙 회원가입 팝업을 통해 계정을 생성할 수 있습니다.
                                             </p>
                                         </div>
-                                        <!-- 뉴스 검색 -->
+                                        <!-- 임시 비밀번호 발급 -->
                                         <div>
-                                            <h5><span class="mx-2">|</span>뉴스 검색</h5>
+                                            <h5><span class="mx-2">|</span>임시 비밀번호 발급</h5>
                                             <p style="padding-left: 10px;">
-                                                노동과 관련된 모든 기사들을 최신 순서로 정렬하여 확인할 수 있습니다.
-                                                또한, 게시 기간과 관심 키워드 선택 및 직접 입력을 통해 원하는 기사를 필터링 해서 확인할 수 있습니다.
+                                                이메일을 통해 임시 비밀번호를 발급받을 수 있습니다.
+                                                <br>이메일 형식으로 입력하지 않을 경우 Get new password 버튼이 비활성화되어 임시 비밀번호를 발급받을 수 없습니다. 
+                                                Cancel 버튼을 누를 경우 로그인 화면으로 이동합니다. 
                                             </p>
                                         </div>
-                                        <!-- 노동법 FAQ -->
+                                        <!-- 회원가입 -->
                                         <div>
-                                            <h5><span class="mx-2">|</span>노동법 FAQ</h5>
+                                            <h5><span class="mx-2">|</span>회원가입</h5>
                                             <p style="padding-left: 10px;">
-                                                대분류(해고, 임금 등), 중분류(해고일반, 통상임금 등), 제목 키워드를 입력하여 노동법 관련 질문과 답을 FAQ로 쉽게 받아볼
-                                                수 있습니다.
+                                                이름, 이메일, 비밀번호, 비밀번호 확인을 통해 회원가입을 할 수 있습니다. 
+                                                <br>이메일 인증과 비밀번호 입력 조건을 모두 만족해야 회원가입 버튼이 활성화 됩니다. 
+                                                인증하기를 누르면 입력한 이메일로 인증 코드를 받을 수 있습니다. 
+                                                1분 안에 새롭게 뜨는 팝업에 인증 코드를 입력하면 이메일 인증이 완료됩니다. 
+                                                또한, 비밀번호는 영어와 특수문자를 모두 포함해 8자이상 적어야 회원가입 버튼이 활성화 됩니다. 
                                             </p>
                                         </div>
-                                        <!-- 게시판 -->
+                                        <!-- 마이페이지 -->
                                         <div>
-                                            <h5><span class="mx-2">|</span>게시판</h5>
+                                            <h5><span class="mx-2">|</span>마이페이지</h5>
                                             <p style="padding-left: 10px;">
-                                                자유게시판으로, 사용자는 게시글을 작성하고 다른 사람들과 상호작용할 수 있습니다.
+                                                페이지의 우측에서 블루링크 스토어 바로가기를 포함해, 적립된 블루멤버스 포인트/보유한 자동차 수/보유한 카드 현황을 한 눈에 확인할 수 있습니다. 
+                                                <br>좌측에는 사진과 이름을 포함한 페이지 네비게이션이 존재합니다. 
+                                                카드 보유 현황에서 카드 상태(전체, 정상, 정지)와 카드 종류(전체, 비신용카드, 신용카드, 체크카드)를 필터링한 결과를 확인할 수 있습니다.  
                                             </p>
                                         </div>
-                                        <!-- 로그인/로그아웃 -->
+                                        <!-- 계정 관리 -->
                                         <div>
-                                            <h5><span class="mx-2">|</span>로그인/로그아웃</h5>
+                                            <h5><span class="mx-2">|</span>계정 관리</h5>
                                             <p style="padding-left: 10px;">
-                                                이메일과 비밀번호를 이용해 로그인/로그아웃을 할 수 있습니다.
-                                                만약 로그인을 하지 않을 경우, 근무 시간 측정 및 근무 시간 통계 수치 확인을 할 수 없습니다.
+                                                대표 이미지와 비밀번호, 이름을 변경할 수 있습니다. 
+                                            </p>
+                                        </div>
+                                        <!-- 결제 수단 관리 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>결제 수단 관리</h5>
+                                            <p style="padding-left: 10px;">
+                                                결제 수단을 관리할 수 있습니다. 
+                                                <br>결제 수단(카드)을 추가, 삭제하거나 정보를 수정할 수 있습니다. 
+                                            </p>
+                                        </div>
+                                        <!-- 나의 현대자동차 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>나의 현대자동차</h5>
+                                            <p style="padding-left: 10px;">
+                                                보유한 자동차를 등록 및 관리합니다.
+                                                <br>현재 보유 차량과 삭제(이전 보유) 차량을 확인할 수 있으며, 보유 차량을 삭제 및 추가(차종분류(현대차보유, 타사차보유)선택, 차종, 차량 번호, 출고년월)할 수 있습니다.
+                                            </p>
+                                        </div>
+                                        <!-- 로그아웃 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>로그아웃</h5>
+                                            <p style="padding-left: 10px;">
+                                                로그아웃하여 마이페이지를 나간 뒤, 로그인 페이지로 이동합니다. 
                                             </p>
                                         </div>
                                     </div>
@@ -284,76 +305,45 @@
                                     <div>
                                         <!-- 기능1 -->
                                         <div>
-                                            <h5><span class="mx-2">|</span>QR 스캔을 통한 인증 시스템</h5>
+                                            <h5><span class="mx-2">|</span>OracleDB 구축</h5>
                                             <p style="padding-left: 10px;">
-                                                근무 시작/중지/퇴근(근무시간 저장) 세 개의 버튼을 누르고,
-                                                미리 발급된 QR코드(추후 회사 사원증으로 대체 가능)를 인식시켜 인식이 완료된 경우 근무 시간을 측정/정지/저장 합니다.
-                                            <ul>
-                                                <li>JavaScript, AJAX 활용</li>
-                                            </ul>
+                                                MacOS(M1칩)를 사용 중인데, Oracle에서 공식적으로 MacOS용 설치 프로그램을 제공하지 않고, 무엇보다 Apple Silicon(ARM 아키텍쳐)에서는 기존 x86_64 기반의 DB를 그대로 설치할 수 없기 때문에 Docker를 통해 실행해 줘야 했습니다. 
+                                                <br>
+                                                <p style="padding-left: 10px; margin-top:10px;"><strong>※</strong> 참고 자료 - <a class="nav-link-style" href="https://king-ja.tistory.com/107" style="color: rgb(124, 124, 124);">M1 맥북에서 Docker로 oracle DB 실행하는 방법</a></p>
                                             </p>
                                         </div>
-                                        <!-- 기능4 -->
+                                        <!-- 기능1 -->
                                         <div>
-                                            <h5><span class="mx-2">|</span>수치를 그래프로 가시화</h5>
+                                            <h5><span class="mx-2">|</span>RESTful API 설계: 이메일 인증 시스템</h5>
                                             <p style="padding-left: 10px;">
-                                                수치를 부트스트랩의 그래프 기능을 이용해 그래프로 가시화하여, 사용자가 데이터의 흐름을 쉽게 파악할 수 있게 설계했습니다.
-                                            <ul>
-                                                <li>Bootstrap - Chart.js 활용</li>
-                                                <li>평균값 계산 로직</li>
-                                            </ul>
+                                                ...
                                             </p>
                                         </div>
                                         <!-- 기능2 -->
                                         <div>
-                                            <h5><span class="mx-2">|</span>게시판 기능</h5>
-                                            <p style="padding-left: 10px;">자유게시판으로, 사용자는 타인과 질문과 답변을 주고받으며 상호작용할 수 있습니다.
-                                            <ul>
-                                                <li>게시글 CRUD: MyBatis를 활용한 MySQL DB 연동</li>
-                                                <li>페이징 처리</li>
-                                                <li>검색 기능</li>
-                                            </ul>
-                                            </p>
-                                        </div>
-                                        <!-- 기능3 -->
-                                        <div>
-                                            <h5><span class="mx-2">|</span>검색 기능</h5>
+                                            <h5><span class="mx-2">|</span>Doker & AWS를 이용한 애플리케이션 배포</h5>
                                             <p style="padding-left: 10px;">
-                                                사용자가 원하는 조건에 맞는 정보(뉴스, 노동법 FAQ)를 신속하게 찾을 수 있습니다.
-                                                사용자는 기간, 키워드, 대/중분류 등 다양한 조건을 기준으로 필터링한 정보를 직관적인 UI를 통해 얻을 수 있습니다.
-                                            <ul>
-                                                <li>검색 조건 필터링 및 결과 정렬 기능: 모듈화</li>
-                                                <li>MyBatis를 활용한 MySQL DB 연동</li>
-                                            </ul>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                                                <p style="padding-left: 10px;">
+                                                    [ EC2 생성 ]
+                                                    <br>설명
+                                                </p>
+                                                <p style="padding-left: 10px;">
+                                                    [ RDS 생성 ]
+                                                    <br>설명
+                                                </p>
+                                                <p style="padding-left: 10px;">
+                                                    [ WAS 생성 ]
+                                                    <br>설명
+                                                </p>
+                                                <p style="padding-left: 10px;">
+                                                    [ 배포 ]
+                                                    <br>MacOS(SSH 클라이언트 보유)를 사용하고 있기 때문에 PuTTY 이용 없이 아래의 ssh 명령어를 이용해 바로 터미널에서 EC2에 접속할 수 있었습니다.
+                                                    <pre class="rounded border" style="padding: 10px; margin-top:2px; width:400px; background-color:#e9e9e9;"><code><span style="color: #569e31;">~$</span> ssh -i {my-key.pem} ubuntu@{EC2-퍼블릭-IP}</code></pre>
+                                                    <p style="padding-left: 10px; margin-top:10px;"><strong>※</strong> 참고 자료 - <a class="nav-link-style" href="https://dy-coding.tistory.com/entry/AWS-ec2-rds-%EC%9D%B4%EC%9A%A9-%EC%8A%A4%ED%94%84%EB%A7%81-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B0%B0%ED%8F%AC-1-ec2-%EC%83%9D%EC%84%B1-%EB%B0%8F-%EC%84%A4%EC%A0%95" style="color: rgb(124, 124, 124);">AWS ec2 + rds 이용 스프링 프로젝트 배포 (1) - (3)</a></p>
+                                                </p>
 
-                                <!-- 역할 -->
-                                <div>
-                                    <div class="text-white rounded py-2 px-4" id="my"
-                                        style="margin-top: 20px; margin-bottom: 20px; background-color: #244781; display: inline-block;">
-                                        <h5 class="m-0">맡은 역할</h5>
-                                    </div>
-                                    <div>
-                                        <!-- 내 역할 -->
-                                        <div>
-                                            <h5><span class="mx-2">|</span>프론트엔드</h5>
-                                            <ul>
-                                                <li>메인 페이지 전체</li>
-                                                <li>나의 근무 시간 페이지</li>
-                                                <li>뉴스 검색 페이지</li>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <h5><span class="mx-2">|</span>백엔드</h5>
-                                            <ul>
-                                                <li>QR코드 인증 시스템</li>
-                                                <li>근무 시간 측정 로직</li>
-                                                <li>뉴스 검색 기능</li>
-                                                <li>게시판 기능</li>
-                                            </ul>
+                                                
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -367,35 +357,10 @@
                                     <div>
                                         <!-- 문제1 -> 해결방안1 -->
                                         <div>
-                                            <h5><span class="mx-2">|</span>QR 인증 완료되지 않아도 근무 시간 측정/정지/퇴근(근무 시간 저장)이 진행되는
-                                                문제</h5>
+                                            <h5><span class="mx-2">|</span>OracleDB ➡︎ MySQL 로 변경하며 환경 설정 과정에서 발생한 문제</h5>
                                             <p style="padding-left: 10px;">
-                                                QR 인증이 완료되지 않아도 근무 시작/중지/퇴근(근무 시간 저장) 동작이 실행되어, 비정상적으로 근무 시간이 기록되는 오류가
-                                                발생했습니다.
-                                                이는 popup() 함수 내부에서 QR 인증 여부 확인 로직 없이 근무 상태를 변경하는 함수(startClock(),
-                                                stopClock(), resetClock())가 실행되었고, 이미 localStorage에 ID/PWD가 저장된 상태라 인증
-                                                과정을 거치지 않아도 로직이 진행되어 발생한 문제였습니다.
-                                                이는 아래의 과정을 통해 해결할 수 있었습니다.
-                                            <ol>
-                                                <li>popup() 함수 실행 시, QR 인증 완료 여부를 확인하는 플래그(isVerified) 추가</li>
-                                                <li>QR 인증 성공 시에만 startClock(), stopClock(), resetClock() 및 AJAX 호출 실행
-                                                </li>
-                                                <li>인증 실패 시에는 알림을 띄우고, 상태 변경 로직 실행을 차단</li>
-                                            </ol>
-                                            <h5 class="mb-3" style="margin-left: 20px;">추가된 로직</h5>
-                                            <div class="container my-4" style="margin-left: 20px;">
-                                                <h6 class="mb-3">popup() 내부에 QR 인증 여부 확인</h6>
-                                                <pre
-                                                    class="rounded border"><code class="language-javascript">localStorage.setItem('isVerified', 'false');</code></pre>
-                                            </div>
-                                            <div class="container my-4" style="margin-left: 20px;">
-                                                <h6 class="mb-3">QR 인증 플래그</h6>
-                                                <pre class="rounded border"><code class="language-javascript">var isVerified = localStorage.getItem('isVerified') === 'true';
-if (!isVerified) {
-    alert("QR 인증이 완료되지 않았습니다. 인증 후 이용해주세요.");
-    return;
-}</code></pre>
-                                            </div>
+                                                RDS 생성 과정에서 OracleDB가 유료인 점을 고려하여, 고민 끝에 MySQL로 생성하게 되었습니다. 
+                                                프로젝트는 OracleDB를 이용해 개발되었기 때문에 배포 전 XML파일을 수정해야 했는데, 
                                             </p>
                                         </div>
                                     </div>
@@ -412,43 +377,36 @@ if (!isVerified) {
                                         <div>
                                             <h5><span class="mx-2">|</span>결과</h5>
                                             <p style="padding-left: 10px;">
-                                                근로자가 QR 코드를 통해 직접 근무 시간을 측정하고, 최신 노동법 및 뉴스 관련 정보를 검색 및 공유하는 기능을 제공하는 웹
-                                                플랫폼을 완성했습니다.
-                                                UI는 직관적으로 구성해 누구나 쉽게 이용 가능하며, 근무 시간 기록 및 데이터 저장 과정에서 QR 인증 시스템을 도입하여 보안성
-                                                및 객관성을 확보했습니다.
-                                                또한 Spring과 MyBatis 기반으로 백엔드-프론트엔드 연동을 최적화해 안정적인 서비스 운영이 가능하도록 구현했습니다.
+                                                ...
                                             </p>
                                         </div>
                                         <!-- 배운점 및 성장한 역량 -->
                                         <div>
                                             <h5><span class="mx-2">|</span>배운점 및 성장한 역량</h5>
                                             <p style="padding-left: 10px;">
-                                                이번 프로젝트를 통해 Spring과 MyBatis를 활용한 백엔드와 프론트엔드 상호작용을 확실하게 체화할 수 있었습니다.
-                                                특히, QR 인증 로직을 구현하며 인증 절차와 상태 플래그를 통한 클라이언트-서버 간 데이터 검증 방식을 학습하여,
-                                                근무 시간 기록 기능을 비정상적인 동작 없이 안정적으로 운영할 수 있는 구조 설계 능력이 향상되었습니다.
-                                                또한, UI/UX 측면에서 사용자 친화적 동작(경고 메시지, 직관적 색상 변화 등)을 적용해
-                                                서비스 품질과 사용성 개선 역량을 강화할 수 있었습니다.
+                                                ...
                                             </p>
                                         </div>
                                         <!-- 다음 개선 과제 -->
                                         <div>
                                             <h5><span class="mx-2">|</span>다음 개선 과제</h5>
                                             <p style="padding-left: 10px;">
-                                            <ul>
-                                                <li><strong>실시간 데이터 반영 - </strong>
-                                                    지금은 각종 검색 포털에서 수집한 노동 테마의 뉴스 데이터와 공공데이터 포털의 API(각종 통계 자료, 법무부
-                                                    생활법률지식, 백문백답)를 수동으로 DB에 저장해 정적으로 관리하고 있으나,
-                                                    추후에는 API 연동을 자동화하여 실시간 병상 정보, 진료 가능 여부 등 최신 상태를 반영할 수 있는 구조로 개선하고자
-                                                    합니다.</li>
-                                                <li><strong>제휴한 회사에 대한 광고 게시 로직 추가로 포털의 수익 창출 - </strong>
-                                                    추후에는 제휴 기업에 대한 광고 게시 시스템을 추가해
-                                                    수익 구조를 마련하고, API 자동화를 통해 포털의 규모를 확장해보고 싶습니다.</li>
-                                                <li><strong>사원증 인증 절차 추가 - </strong>
-                                                    현재는 QR 코드 인증만으로 근무 시간을 측정하고 있으나,
-                                                    추후에는 사원증 기반 인증 시스템을 구현해
-                                                    보안성 및 객관성을 높이고, 클라우드 환경에 배포하여 실제 기업 환경에서도 안정적으로 운영할 수 있도록 확장하고 싶습니다.
-                                                </li>
-                                            </ul>
+                                                ...
+                                                <!-- <ul>
+                                                    <li><strong>실시간 데이터 반영 - </strong>
+                                                        지금은 각종 검색 포털에서 수집한 노동 테마의 뉴스 데이터와 공공데이터 포털의 API(각종 통계 자료, 법무부
+                                                        생활법률지식, 백문백답)를 수동으로 DB에 저장해 정적으로 관리하고 있으나,
+                                                        추후에는 API 연동을 자동화하여 실시간 병상 정보, 진료 가능 여부 등 최신 상태를 반영할 수 있는 구조로 개선하고자
+                                                        합니다.</li>
+                                                    <li><strong>제휴한 회사에 대한 광고 게시 로직 추가로 포털의 수익 창출 - </strong>
+                                                        추후에는 제휴 기업에 대한 광고 게시 시스템을 추가해
+                                                        수익 구조를 마련하고, API 자동화를 통해 포털의 규모를 확장해보고 싶습니다.</li>
+                                                    <li><strong>사원증 인증 절차 추가 - </strong>
+                                                        현재는 QR 코드 인증만으로 근무 시간을 측정하고 있으나,
+                                                        추후에는 사원증 기반 인증 시스템을 구현해
+                                                        보안성 및 객관성을 높이고, 클라우드 환경에 배포하여 실제 기업 환경에서도 안정적으로 운영할 수 있도록 확장하고 싶습니다.
+                                                    </li>
+                                                </ul> -->
                                             </p>
                                         </div>
                                     </div>
@@ -641,7 +599,6 @@ if (!isVerified) {
                                 <a href="#overview" class="btn animate-up-2">프로젝트 개요</a>
                                 <a href="#flow" class="btn animate-up-2">전체 서비스</a>
                                 <a href="#main" class="btn animate-up-2">핵심 기능</a>
-                                <a href="#my" class="btn animate-up-2">맡은 역할</a>
                                 <a href="#problem" class="btn animate-up-2">발생한 문제 & 해결 방안</a>
                                 <a href="#result" class="btn animate-up-2">성과 및 느낀점</a>
                                 <a href="#img" class="btn animate-up-2">프로젝트 이미지</a>
