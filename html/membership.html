@@ -210,7 +210,6 @@
                                                 현대오토에버에서 개발한 블루멤버십 서비스를 참고하여 제작한 멤버십 서비스 관련 프로젝트로, 배포 테스트를 완료했지만 아직 개발 단계에 있습니다.</p>
                                             <p style="padding-left: 10px;">
                                                 로그인, 회원가입, 비밀번호 찾기, 마이페이지, 자동차/카드 관리 기능 구현 및 AWS를 이용한 애플리케이션 배포가 목적입니다.
-                                                현재까지 로그인, 마이페이지, AWS를 이용한 애플리케이션 배포까지 완료되었습니다.
                                             </p>
                                         </div>
                                     </div>
@@ -307,27 +306,43 @@
                                         <div>
                                             <h5><span class="mx-2">|</span>OracleDB 구축</h5>
                                             <p style="padding-left: 10px;">
-                                                MacOS(M1칩)를 사용 중인데, Oracle에서 공식적으로 MacOS용 설치 프로그램을 제공하지 않고, 무엇보다 Apple Silicon(ARM 아키텍쳐)에서는 기존 x86_64 기반의 DB를 그대로 설치할 수 없기 때문에 Docker를 통해 실행해 줘야 했습니다. 
-                                                <br>
-                                                <p style="padding-left: 10px; margin-top:10px;"><strong>※</strong> 참고 자료 - <a class="nav-link-style" href="https://king-ja.tistory.com/107" style="color: rgb(124, 124, 124);">M1 맥북에서 Docker로 oracle DB 실행하는 방법</a></p>
+                                                MacOS(M1 칩) 환경에서는 Oracle이 공식 설치 파일을 제공하지 않고, Apple Silicon(ARM 아키텍처)은 기존 x86_64 기반 DB를 직접 실행할 수 없기 때문에 
+                                                Docker를 활용해 OracleDB를 구동했습니다.
+                                                <ol>
+                                                    <li>오픈 소스 컨테이너 런타임인 Colima를 이용해 x86_64 환경으로 만들어 줍니다.</li>
+                                                    <li>docker를 이용해 oracle-xe 이미지를 다운 받습니다.</li>
+                                                    <li>docker 컨테이너를 생성하고 실행합니다.
+                                                        <br>단, ARM 아키텍처를 쓰는 경우, gvenzl/oracle-xe 이미지 사용 시, platform 호환성 문제가 생겨 실행은 되지만 내부에서 느려지거나 깨져 아예 작동하지 않을 수 있습니다. 
+                                                        이 문제를 해결하기 위해 컨테이너 생성 시, <span class="nav-link-style" style="border-radius: 10px; background-color: rgb(243, 241, 236); padding: 2px; padding-left: 10px; padding-right: 10px;">--platform linux/amd64</span> 해당 조건을 붙여 주어야 합니다.
+                                                    </li>
+                                                </ol>
+                                                <p style="padding-left: 10px;">
+                                                    docker-compose(Yaml)를 이용해 컨테이너 구축 및 관리할 수 있지만, 터미널을 이용한 방법을 경험해보고자 해당 방법을 선택했습니다. 
+                                                    이 과정을 통해 로컬 개발 환경에서의 Docker를 이용해 DB를 구축하고 실행하여 
+                                                    MacOS(M1)에서도 안정적으로 OracleDB 기반의 CRUD 및 쿼리 테스트를 수행할 수 있었습니다.
+                                                </p>
+                                                <p style="padding-left: 10px; margin-top:20px;"><strong>※</strong> 구체적으로 정리한 자료(Notion) - <a class="nav-link-style" href="https://www.notion.so/Docker-24237dc575fa80a398adfb974812cda7?source=copy_link" style="color: rgb(124, 124, 124);">Docker</a></p>
+                                                <p style="padding-left: 10px; margin-top: -10px;">
+                                                    <strong>※</strong> 참고 자료 - 
+                                                    <a class="nav-link-style" href="https://king-ja.tistory.com/107" style="color: rgb(124, 124, 124);">
+                                                        M1 맥북에서 Docker로 Oracle DB 실행하는 방법
+                                                    </a>
+                                                </p>
                                             </p>
                                         </div>
-                                        <!-- 기능1 -->
+
+                                        <!-- 기능2 -->
                                         <div>
                                             <h5><span class="mx-2">|</span>RESTful API 설계: 이메일 인증 시스템</h5>
                                             <p style="padding-left: 10px;">
                                                 ...
                                             </p>
                                         </div>
-                                        <!-- 기능2 -->
+
+                                        <!-- 기능3 -->
                                         <div>
                                             <h5><span class="mx-2">|</span>Doker & AWS를 이용한 애플리케이션 배포</h5>
                                             <p style="padding-left: 10px;">
-                                                <p style="padding-left: 10px;">
-                                                    [ Docker를 이용한 컨테이너 생성 및 실행 ]
-                                                    <br>...
-                                                    <p style="padding-left: 10px; margin-top:10px;"><strong>※</strong> 자세히 정리한 자료 - <a class="nav-link-style" href="https://www.notion.so/Docker-24237dc575fa80a398adfb974812cda7?source=copy_link" style="color: rgb(124, 124, 124);">Docker</a></p>
-                                                </p>
                                                 <p style="padding-left: 10px;">
                                                     [ EC2 생성 ]
                                                     <br>...
@@ -342,6 +357,7 @@
                                                 </p>
                                                 <p style="padding-left: 10px;">
                                                     [ 배포 ]
+                                                    Maven 환경에서 WAR 파일 만들기 
                                                     <br>MacOS(SSH 클라이언트 보유)를 사용하고 있기 때문에 PuTTY 이용 없이 아래의 ssh 명령어를 이용해 바로 터미널에서 EC2에 접속할 수 있었습니다.
                                                     <pre class="rounded border" style="padding: 10px; margin-top:2px; width:400px; background-color:#e9e9e9;"><code><span style="color: #569e31;">~$</span> ssh -i {my-key.pem} ubuntu@{EC2-퍼블릭-IP}</code></pre>
                                                     <p style="padding-left: 10px; margin-top:10px;"><strong>※</strong> 참고 자료 - <a class="nav-link-style" href="https://dy-coding.tistory.com/entry/AWS-ec2-rds-%EC%9D%B4%EC%9A%A9-%EC%8A%A4%ED%94%84%EB%A7%81-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B0%B0%ED%8F%AC-1-ec2-%EC%83%9D%EC%84%B1-%EB%B0%8F-%EC%84%A4%EC%A0%95" style="color: rgb(124, 124, 124);">AWS ec2 + rds 이용 스프링 프로젝트 배포 (1) - (3)</a></p>
