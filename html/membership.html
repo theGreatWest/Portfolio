@@ -207,9 +207,9 @@
                                         <div>
                                             <h5><span class="mx-2">|</span>프로젝트 요약</h5>
                                             <p style="padding-left: 10px;">해당 프로젝트는 <strong>Oracle DB 활용법 및 RESTful API 설계, 클라우드를 이용한 애플리케이션 배포</strong> 등 <strong>처음 접하는 기술을 빠르게 학습하고 프로젝트에 적용하는 경험</strong>을 하기 위해, 
-                                                현대오토에버에서 개발한 블루멤버십 서비스를 참고하여 제작한 멤버십 서비스 관련 프로젝트로, 배포 테스트를 완료했지만 아직 개발 단계에 있습니다.</p>
+                                                현대오토에버에서 개발한 블루멤버스 서비스를 참고하여 제작한 멤버십 서비스 관련 프로젝트로, 배포 테스트를 완료했지만 아직 개발 단계에 있습니다.</p>
                                             <p style="padding-left: 10px;">
-                                                로그인, 회원가입, 비밀번호 찾기, 마이페이지, 자동차/카드 관리 기능 구현 및 AWS를 이용한 애플리케이션 배포가 목적입니다.
+                                                로그인, 회원가입, 비밀번호 찾기, 마이페이지, 자동차/카드 관리 CRUD 기능 구현 및 AWS를 이용한 애플리케이션 배포가 목적입니다.
                                             </p>
                                         </div>
                                     </div>
@@ -313,7 +313,7 @@
                                                     <li>docker를 이용해 oracle-xe 이미지를 다운 받습니다.</li>
                                                     <li>docker 컨테이너를 생성하고 실행합니다.
                                                         <br>단, ARM 아키텍처를 쓰는 경우, gvenzl/oracle-xe 이미지 사용 시, platform 호환성 문제가 생겨 실행은 되지만 내부에서 느려지거나 깨져 아예 작동하지 않을 수 있습니다. 
-                                                        이 문제를 해결하기 위해 컨테이너 생성 시, <span class="nav-link-style" style="border-radius: 10px; background-color: rgb(243, 241, 236); padding: 2px; padding-left: 10px; padding-right: 10px;">--platform linux/amd64</span> 해당 조건을 붙여 주어야 합니다.
+                                                        이 문제를 해결하기 위해 컨테이너 생성 시, <span class="nav-link-style" style="border-radius: 10px; background-color: rgb(243, 241, 236); padding: 2px; padding-left: 10px; padding-right: 10px;">--platform linux/amd64</span> 조건을 붙여 주었습니다.
                                                     </li>
                                                 </ol>
                                                 <p style="padding-left: 10px;">
@@ -332,40 +332,77 @@
                                         </div>
 
                                         <!-- 기능2 -->
-                                        <div>
+                                        <div style="margin-top: 40px;">
                                             <h5><span class="mx-2">|</span>RESTful API 설계: 이메일 인증 시스템</h5>
                                             <p style="padding-left: 10px;">
-                                                ...
+                                                회원가입 과정에서 사용자 이메일의 유효성을 검증하기 위해 RESTful API 기반 이메일 인증 시스템을 설계했습니다. 
+                                                인증 코드 발급/발송/검증의 세 단계로 구성했고, 추후 다른 서비스에서도 쉽게 확장 가능하도록 모듈화된 구조로 구현했습니다. 
+                                                <ol>
+                                                    <!-- 1. 인증 코드 발급 -->
+                                                    <li><strong>인증 코드 발급</strong><br>
+                                                        사용자가 회원가입 시 이메일 주소를 입력하면, 서버에서 6자리 난수 기반의 인증 코드를 생성합니다. 
+                                                        생성된 코드는 MySQL(RDS)에 저장하며, 1분의 유효기간을 설정해 기한이 지나면 자동으로 무효화되도록 설계했습니다.
+                                                    </li>
+                                                    
+                                                    <!-- 2. 이메일 발송 -->
+                                                    <li><strong>이메일 발송</strong><br>
+                                                        JavaMailSender를 활용해 Gmail과 같은 이메일 전송 서버(SMTP)에 인증 코드 발송 요청을 보내고, 
+                                                        서버가 이를 수신자 메일로 전달하도록 구현했습니다.
+                                                    </li>
+                                                    
+                                                    <!-- 3. 인증 코드 검증 -->
+                                                    <li><strong>인증 코드 검증</strong><br>
+                                                        사용자가 입력한 인증 코드를 서버에서 조회해 저장된 값과 비교하여 유효성을 검증합니다. 
+                                                        유효 시간이 지났거나 코드가 일치하지 않으면 인증에 실패하도록 처리했습니다.
+                                                    </li>
+                                                </ol>
                                             </p>
                                         </div>
 
                                         <!-- 기능3 -->
-                                        <div>
-                                            <h5><span class="mx-2">|</span>Doker & AWS를 이용한 애플리케이션 배포</h5>
+                                        <div style="margin-top: 40px;">
+                                            <h5><span class="mx-2">|</span>Docker & AWS를 이용한 애플리케이션 배포</h5>
                                             <p style="padding-left: 10px;">
-                                                <p style="padding-left: 10px;">
-                                                    [ EC2 생성 ]
-                                                    <br>...
+                                                MacOS(SSH 클라이언트 내장)를 사용하고 있기 때문에 PuTTY 설치 없이 터미널에서 바로 EC2에 접속할 수 있었고, 아래와 같은 과정을 통해 배포를 진행했습니다. 
+                                                <pre class="rounded border" style="padding: 10px; margin-top:2px; width:400px; background-color:#e9e9e9;"><code><span style="color: #569e31;">~$</span> ssh -i {my-key.pem} ubuntu@{EC2-퍼블릭-IP}</code></pre>
+                                                <ol>
+                                                    <!-- EC2 생성 -->
+                                                    <li><strong>EC2 생성</strong><br>
+                                                        Ubuntu 기반 EC2 인스턴스를 생성한 후, 보안 그룹에서 22(SSH), 8080(Tomcat), 3306(MySQL/RDS) 포트를 열어 원격 접속 및 서비스 요청을 허용했습니다.
+                                                        또한 키 페어(.pem)를 발급받아 로컬에서 SSH 접속 환경을 구성했습니다.
+                                                    </li>
+                                                    
+                                                    <!-- RDS 생성 -->
+                                                    <li><strong>RDS 생성</strong><br>
+                                                        AWS RDS에서 MySQL DB 인스턴스를 생성하고, EC2의 보안 그룹을 RDS에 추가해 EC2와 RDS 간 네트워크 통신을 설정했습니다. 
+                                                        애플리케이션의 DB 연결 정보는 src/main/resources/driver.properties에 RDS 엔드포인트, 계정, 포트를 지정해 연동했습니다.
+                                                    </li>
+                                                    
+                                                    <!-- WAS 생성 -->
+                                                    <li><strong>WAS 환경 구성</strong><br>
+                                                        프로젝트가 Maven 기반 Spring Legacy 구조이므로,
+                                                        Maven build로 WAR 파일을 생성하고, target 디렉토리에서 결과물을 확인했습니다.
+                                                        EC2에는 Tomcat9을 설치해 애플리케이션 서버 환경을 구성했습니다.
+                                                    </li>
+                                                    
+                                                    <!-- 배포 -->
+                                                    <li><strong>배포</strong><br>
+                                                        생성한 WAR 파일을 EC2로 전송
+                                                        <pre class="rounded border" style="padding: 10px; margin-top:2px; width:580px; background-color:#e9e9e9;"><code><span style="color: #569e31;">~$</span> scp -i {my-key.pem} {WAR파일} ubuntu@{EC2-퍼블릭-IP}:/home/ubuntu/</code></pre>
+                                                        
+                                                        Tomcat 서버로 WAR 파일 이동
+                                                        <pre class="rounded border" style="padding: 10px; margin-top:2px; width:460px; background-color:#e9e9e9;"><code><span style="color: #569e31;">ubuntu@EC2:~$</span> sudo mv {WAR파일} /opt/tomcat9/webapps/</code></pre>
+                                                        
+                                                        Tomcat을 재시작하여 애플리케이션을 배포
+                                                        <pre class="rounded border" style="padding: 10px; margin-top:2px; width:400px; background-color:#e9e9e9;"><code><span style="color: #569e31;">ubuntu@EC2:~$</span> sudo systemctl restart tomcat9</code></pre>
+                                                    </li>
+                                                </ol> 
+                                                <p style="padding-left: 10px; margin-top:20px;">
+                                                    <strong>※</strong> 참고 자료 - <a class="nav-link-style" href="https://dy-coding.tistory.com/entry/AWS-ec2-rds-%EC%9D%B4%EC%9A%A9-%EC%8A%A4%ED%94%84%EB%A7%81-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B0%B0%ED%8F%AC-1-ec2-%EC%83%9D%EC%84%B1-%EB%B0%8F-%EC%84%A4%EC%A0%95" style="color: rgb(124, 124, 124);">AWS EC2 + RDS를 이용한 스프링 프로젝트 배포 (1)~(3)</a>
                                                 </p>
-                                                <p style="padding-left: 10px;">
-                                                    [ RDS 생성 ]
-                                                    <br>...
-                                                </p>
-                                                <p style="padding-left: 10px;">
-                                                    [ WAS 생성 ]
-                                                    <br>...
-                                                </p>
-                                                <p style="padding-left: 10px;">
-                                                    [ 배포 ]
-                                                    Maven 환경에서 WAR 파일 만들기 
-                                                    <br>MacOS(SSH 클라이언트 보유)를 사용하고 있기 때문에 PuTTY 이용 없이 아래의 ssh 명령어를 이용해 바로 터미널에서 EC2에 접속할 수 있었습니다.
-                                                    <pre class="rounded border" style="padding: 10px; margin-top:2px; width:400px; background-color:#e9e9e9;"><code><span style="color: #569e31;">~$</span> ssh -i {my-key.pem} ubuntu@{EC2-퍼블릭-IP}</code></pre>
-                                                    <p style="padding-left: 10px; margin-top:10px;"><strong>※</strong> 참고 자료 - <a class="nav-link-style" href="https://dy-coding.tistory.com/entry/AWS-ec2-rds-%EC%9D%B4%EC%9A%A9-%EC%8A%A4%ED%94%84%EB%A7%81-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B0%B0%ED%8F%AC-1-ec2-%EC%83%9D%EC%84%B1-%EB%B0%8F-%EC%84%A4%EC%A0%95" style="color: rgb(124, 124, 124);">AWS ec2 + rds 이용 스프링 프로젝트 배포 (1) - (3)</a></p>
-                                                </p>
-
-                                                
                                             </p>
                                         </div>
+
                                     </div>
                                 </div>
 
@@ -378,10 +415,25 @@
                                     <div>
                                         <!-- 문제1 -> 해결방안1 -->
                                         <div>
-                                            <h5><span class="mx-2">|</span>OracleDB ➡︎ MySQL 로 변경하며 환경 설정 과정에서 발생한 문제</h5>
+                                            <h5><span class="mx-2">|</span>RDS 생성 후, OracleDB ➡︎ MySQL로 변경하며 환경 설정 과정에서 발생한 문제</h5>
                                             <p style="padding-left: 10px;">
-                                                RDS 생성 과정에서 OracleDB가 유료인 점을 고려하여, 고민 끝에 MySQL로 생성하게 되었습니다. 
-                                                프로젝트는 OracleDB를 이용해 개발되었기 때문에 배포 전 XML파일을 수정해야 했는데, 
+                                                RDS 생성 시 비용 문제로 OracleDB 대신 MySQL을 선택했습니다.  
+                                                하지만 프로젝트가 OracleDB 기반으로 개발되어 있어 배포 테스트 시, XML 설정 파일의 데이터베이스 관련 설정이 맞지 않아 404 에러가 발생했습니다.  
+                                                이는 SQL 문법 차이와 Spring Bean 설정 불일치에서 비롯된 문제였습니다.  
+                                                이를 해결하기 위해 MySQL에 맞게 SQL 문법과 데이터베이스 관련 매퍼 XML 파일을 수정하고,  
+                                                Spring 설정 파일 내 데이터 소스와 SqlSessionFactoryBean 관련 Bean 설정을 MySQL 환경에 맞게 재구성했습니다.  
+                                                또한, XML 매퍼 파일의 경로와 네임스페이스도 함께 점검하여 정상적으로 매핑되도록 조치한 결과, WAR 파일이 정상적으로 배포되었습니다.
+                                            </p>
+                                        </div>
+
+                                        <!-- 문제2 -> 해결방안2 -->
+                                        <div>
+                                            <h5><span class="mx-2">|</span>AWS 설정 과정에서 발생한 보안 그룹 포트 문제</h5>
+                                            <p style="padding-left: 10px;">
+                                                EC2 인스턴스 생성 후 애플리케이션 접근이 되지 않는 문제가 있었습니다.  
+                                                원인은 AWS 보안 그룹 설정에서 HTTP 및 Tomcat 기본 포트가 차단되어 있었기 때문입니다.  
+                                                문제 해결을 위해 보안 그룹 인바운드 규칙에 해당 포트들을 추가하여 외부에서 접근 가능하도록 설정을 변경했습니다.  
+                                                이후 정상적으로 웹 애플리케이션에 접속할 수 있었습니다.
                                             </p>
                                         </div>
                                     </div>
@@ -394,25 +446,23 @@
                                         <h5 class="m-0">프로젝트 성과 및 느낀점</h5>
                                     </div>
                                     <div>
-                                        <!-- 프로젝트 결과-->
-                                        <div>
-                                            <h5><span class="mx-2">|</span>결과</h5>
-                                            <p style="padding-left: 10px;">
-                                                ...
-                                            </p>
-                                        </div>
                                         <!-- 배운점 및 성장한 역량 -->
                                         <div>
                                             <h5><span class="mx-2">|</span>배운점 및 성장한 역량</h5>
                                             <p style="padding-left: 10px;">
-                                                ...
+                                                이번 프로젝트를 통해 처음 다뤄본 OracleDB와 AWS 배포 과정을 직접 경험하며, 새로운 기술을 빠르게 학습하고 프로젝트에 적용하는 방법을 익혔습니다. 
+                                                특히 Docker를 활용해 M1 환경에서 OracleDB를 실행하고, MySQL RDS로 전환하며 SQL 문법과 Spring Bean 설정 차이를 이해하고 조정할 수 있었습니다. 
+                                                또한 RESTful API 설계를 구현하며, 백엔드 로직과 클라이언트 간의 상호작용 구조를 보다 명확하게 파악하게 되었습니다.
                                             </p>
                                         </div>
+
                                         <!-- 다음 개선 과제 -->
                                         <div>
                                             <h5><span class="mx-2">|</span>다음 개선 과제</h5>
                                             <p style="padding-left: 10px;">
-                                                ...
+                                                현재는 수동으로 진행한 배포 과정을 Docker와 CI/CD 파이프라인으로 개선해보고자 합니다. 
+                                                구체적으로 Docker로 애플리케이션과 환경을 이미지로 묶어 배포를 단순화하고, Github Actions를 이용해 코드 변경 시 자동 빌드/배포가 이루어지는 파이프라인을 구축해볼 계획입니다. 
+                                                이를 통해, 배포 시간을 줄여 보다 안정적이고 확장 가능한 서비스 운영 환경을 구축할 수 있을 것 입니다. 
                                             </p>
                                         </div>
                                     </div>
@@ -463,6 +513,16 @@
                                                         data-caption="Conference Space">
                                                         <img class="rounded"
                                                             src="../assets/img/project/membership/my_page.png" alt="" />
+                                                    </a>
+                                                </div>
+                                                <!-- 사진6 -->
+                                                <div class="custom-carousel-item">
+                                                    <a href="../assets/img/project/membership/my_page_filter.png"
+                                                        class="mb-4 col-6 col-sm-4" data-fancybox="images"
+                                                        data-caption="Conference Space">
+                                                        <img class="rounded"
+                                                            src="../assets/img/project/membership/my_page_filter.png"
+                                                            alt="" />
                                                     </a>
                                                 </div>
                                                 <!-- 사진5 -->
