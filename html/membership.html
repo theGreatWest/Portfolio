@@ -411,6 +411,7 @@ jobs:
 
       # 3. Maven으로 빌드 및 테스트 실행
       - name: Build with Maven
+        working-directory: MembershipMini
         run: mvn clean package  # 프로젝트 정리(clean) 후 패키징(war 생성)
 
       # 4. 생성된 WAR 파일을 EC2 서버로 전송
@@ -432,7 +433,7 @@ jobs:
           key: ${{ secrets.EC2_KEY }}
           script: |
             sudo mv /home/ubuntu/*.war /opt/tomcat9/webapps/  # Tomcat 웹앱 경로로 WAR 이동
-            sudo systemctl restart tomcat9                     # Tomcat 서버 재시작</code></pre>
+            sudo /opt/tomcat9/bin/startup.sh                     # Tomcat 서버 재시작</code></pre>
 
                                                         생성한 WAR 파일을 EC2로 전송
                                                         <pre class="rounded border" style="padding: 10px; margin-top:2px; width:580px; background-color:#e9e9e9;"><code><span style="color: #569e31;">~$</span> scp -i {my-key.pem} {WAR파일} ubuntu@{EC2-퍼블릭-IP}:/home/ubuntu/</code></pre>
